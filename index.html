@@ -5,33 +5,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mark Chito - Freelance Web Developer</title>
+
+    <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" type="image/png">
+
+    <!-- Custom Styles -->
     <style>
         body {
-            background: #f8f9fa;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8f9fa;
+            scroll-behavior: smooth;
         }
 
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
                 url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?fit=crop&w=1350&q=80') center/cover no-repeat;
             color: #fff;
-            padding: 120px 0;
+            padding: 140px 0;
             text-align: center;
         }
 
         .hero h1 {
-            font-weight: bold;
-            font-size: 3rem;
+            font-weight: 700;
+            font-size: 3.2rem;
         }
 
         .hero p {
             font-size: 1.25rem;
+            margin-top: 1rem;
         }
 
-        .tech-stack img {
-            max-width: 60px;
-            height: auto;
-            margin: 15px;
+        .tech-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .tech-card img {
+            max-height: 60px;
+            object-fit: contain;
+            margin-top: 15px;
+        }
+
+        .section-title {
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        footer {
+            font-size: 0.95rem;
         }
     </style>
 </head>
@@ -43,25 +73,23 @@
         <div class="container">
             <h1>Hi, I'm Mark Chito</h1>
             <p class="lead">Freelance Web Developer</p>
-            <a href="#about" class="btn btn-primary btn-lg mt-3">Learn More</a>
+            <a href="#about" class="btn btn-outline-light btn-lg mt-3">Explore More</a>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="py-5">
         <div class="container">
-            <h2 class="mb-4 text-center">About Me</h2>
+            <h2 class="section-title text-center">About Me</h2>
             <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <p>
-                        I’m a freelance web developer passionate about building dynamic and scalable web applications.
-                        My primary backend stack is PHP with CodeIgniter, and on the frontend I work extensively with
-                        Bootstrap, jQuery, and various modern frameworks. I love translating ideas into elegant, functional
-                        web experiences.
+                <div class="col-md-8 text-center">
+                    <p class="lead">
+                        I’m a freelance web developer with a focus on creating dynamic, scalable, and user-friendly web applications.
+                        My expertise lies in PHP (CodeIgniter), Bootstrap, jQuery, and modern frontend frameworks.
                     </p>
                     <p>
-                        Whether it’s crafting custom websites, developing APIs, or enhancing user interfaces, I’m driven
-                        to deliver clean, maintainable code and solutions that help businesses grow.
+                        I’m passionate about clean code, performance optimization, and solving complex problems with simple, elegant solutions.
+                        Let’s bring your ideas to life with robust, maintainable web systems.
                     </p>
                 </div>
             </div>
@@ -69,59 +97,87 @@
     </section>
 
     <!-- Tech Stack Section -->
-    <section class="py-5 bg-light">
+    <section id="tech" class="py-5 bg-light">
         <div class="container">
-            <h2 class="mb-4 text-center">Tech Stack</h2>
-            <div class="row justify-content-center text-center tech-stack">
-                <div class="col-4 col-sm-2">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP Logo">
-                    <p>PHP</p>
+            <h2 class="section-title text-center">Tech Stack</h2>
+            <div class="row g-4 justify-content-center">
+                <!-- PHP -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card tech-card text-center p-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP Logo">
+                        <div class="card-body">
+                            <h6 class="card-title">PHP</h6>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-4 col-sm-2">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain-wordmark.svg" alt="CodeIgniter Logo">
-                    <p>CodeIgniter</p>
+                <!-- CodeIgniter -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card tech-card text-center p-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain-wordmark.svg" alt="CodeIgniter Logo">
+                        <div class="card-body">
+                            <h6 class="card-title">CodeIgniter</h6>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-4 col-sm-2">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" alt="Bootstrap Logo">
-                    <p>Bootstrap</p>
+                <!-- Bootstrap -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card tech-card text-center p-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" alt="Bootstrap Logo">
+                        <div class="card-body">
+                            <h6 class="card-title">Bootstrap</h6>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-4 col-sm-2">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery Logo">
-                    <p>jQuery</p>
+                <!-- jQuery -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card tech-card text-center p-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery Logo">
+                        <div class="card-body">
+                            <h6 class="card-title">jQuery</h6>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-4 col-sm-2">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Frontend Frameworks Logo">
-                    <p>Frontend</p>
+                <!-- Frontend -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card tech-card text-center p-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Frontend Frameworks">
+                        <div class="card-body">
+                            <h6 class="card-title">Frontend</h6>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="py-5">
+    <section id="contact" class="py-5">
         <div class="container text-center">
-            <h2 class="mb-4">Get in Touch</h2>
-            <p>Let’s build something amazing together! Feel free to connect with me:</p>
-            <a href="mailto:00anteja23@gmail.com" class="btn btn-outline-primary me-2">
-                <i class="bi bi-envelope"></i> Email Me
-            </a>
-            <a href="https://github.com/markchitoanteja" target="_blank" class="btn btn-outline-dark me-2">
-                <i class="bi bi-github"></i> GitHub
-            </a>
-            <a href="https://www.facebook.com/markchito" target="_blank" class="btn btn-outline-primary">
-                <i class="bi bi-facebook"></i> Facebook
-            </a>
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="mb-4">Let’s build something great together. You can reach me via:</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="mailto:00anteja23@gmail.com" class="btn btn-outline-primary">
+                    <i class="bi bi-envelope"></i> Email Me
+                </a>
+                <a href="https://github.com/markchitoanteja" target="_blank" class="btn btn-outline-dark">
+                    <i class="bi bi-github"></i> GitHub
+                </a>
+                <a href="https://www.facebook.com/markchito" target="_blank" class="btn btn-outline-primary">
+                    <i class="bi bi-facebook"></i> Facebook
+                </a>
+            </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="py-3 bg-dark text-light text-center">
         <div class="container">
-            &copy; 2025 Mark Chito. All rights reserved.
+            &copy; 2025 Mark Chito Anteja. All rights reserved.
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </body>
 
 </html>

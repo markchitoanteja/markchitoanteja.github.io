@@ -1,0 +1,15 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# If the request is for a file or directory, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Rewrite URLs without extension to .html if the .html file exists
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# Optionally: serve index.html for root request
+DirectoryIndex index.html

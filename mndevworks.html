@@ -1,0 +1,1164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MN DevWorks — Forging Digital Solutions That Work.</title>
+  <meta name="description" content="MN DevWorks — Mark & Nash. Forging digital solutions that work. Web, embedded, and software projects crafted by developers." />
+  <link rel="icon" type="image/png" href="logo-circle.png" />
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --card: #121212;
+      --text: #ffffff;
+      --muted: #bdbdbd;
+      --accent: #00bcd4;
+      --radius: 14px;
+      --max-width: 1100px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: dark;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 36px auto;
+      padding: 20px;
+    }
+
+    /* Top nav */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav .navlink {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .nav .navlink.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(0, 188, 212, 0.06);
+    }
+
+    /* Main layout */
+    .wrap {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Left card */
+    .left .logo {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .left h2 {
+      margin: 14px 0 6px;
+      font-size: 18px;
+    }
+
+    .tag {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    /* Contact buttons */
+    .contacts {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      transition: background 0.18s, color 0.18s, border 0.18s;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #000;
+      border: none;
+      box-shadow: 0 2px 8px rgba(0, 188, 212, 0.08);
+    }
+
+    .btn:hover {
+      opacity: 0.95;
+      background: rgba(0, 188, 212, 0.08);
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* Content */
+    .lead {
+      font-size: 20px;
+      margin: 0 0 8px;
+      font-weight: 700;
+    }
+
+    .about {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0 0 12px;
+    }
+
+    /* Projects grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .cardbox {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .cardbox h4 {
+      margin: 0 0 6px;
+      color: var(--accent);
+    }
+
+    .cardbox p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Loader */
+    .loader {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0;
+    }
+
+    .loader span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: bounce 0.8s infinite alternate;
+    }
+
+    .loader span:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    .loader span:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes bounce {
+      from {
+        transform: translateY(0);
+        opacity: 0.8
+      }
+
+      to {
+        transform: translateY(-8px);
+        opacity: 1
+      }
+    }
+
+    /* Receipt UI */
+    .receipt-container {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .receipt-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .receipt-brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .receipt-brand img {
+      width: 84px;
+      height: 84px;
+      border-radius: 10px;
+    }
+
+    .receipt-meta {
+      text-align: right;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    form .row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .field label {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .field input[type="text"],
+    .field input[type="number"],
+    .field textarea,
+    .field select {
+      background: var(--bg);
+      border: 1.5px solid rgba(0, 188, 212, 0.18);
+      color: var(--text);
+      padding: 9px 12px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      transition: border-color 0.18s, box-shadow 0.18s;
+      box-shadow: 0 2px 8px rgba(0, 188, 212, 0.05);
+      outline: none;
+    }
+
+    .field input[type="text"]:focus,
+    .field input[type="number"]:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 2px 12px rgba(0, 188, 212, 0.13);
+    }
+
+    textarea {
+      min-height: 64px;
+      resize: vertical;
+    }
+
+    /* Notes box - improved style */
+    #notes {
+      background: var(--bg);
+      border: 1.5px solid rgba(0, 188, 212, 0.18);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: inherit;
+      transition: border-color 0.18s, box-shadow 0.18s;
+      box-shadow: 0 2px 8px rgba(0, 188, 212, 0.05);
+      outline: none;
+      margin-top: 4px;
+    }
+
+    #notes:focus {
+      border-color: var(--accent);
+      box-shadow: 0 2px 12px rgba(0, 188, 212, 0.13);
+    }
+
+    /* Items table - improved style */
+    table.items {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 8px;
+      background: none;
+    }
+
+    table.items th {
+      background: rgba(0, 188, 212, 0.06);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      border-bottom: 2px solid var(--accent);
+      padding: 12px 8px;
+      text-align: left;
+      letter-spacing: 0.01em;
+    }
+
+    table.items td {
+      padding: 10px 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      vertical-align: middle;
+    }
+
+    table.items td:last-child,
+    table.items th:last-child {
+      border-right: none;
+    }
+
+    /* Item row inputs */
+    .item-desc,
+    .item-qty,
+    .item-price {
+      background: var(--bg);
+      border: 1.5px solid rgba(0, 188, 212, 0.18);
+      color: var(--text);
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      transition: border-color 0.18s, box-shadow 0.18s;
+      box-shadow: 0 2px 8px rgba(0, 188, 212, 0.05);
+      outline: none;
+      width: 100%;
+      margin: 0;
+    }
+
+    .item-desc:focus,
+    .item-qty:focus,
+    .item-price:focus {
+      border-color: var(--accent);
+      box-shadow: 0 2px 12px rgba(0, 188, 212, 0.12);
+    }
+
+    /* Quantity and price width */
+    .item-qty {
+      width: 70px;
+    }
+
+    .item-price {
+      width: 110px;
+    }
+
+    /* Amount cell */
+    .item-amount {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 15px;
+      text-align: right;
+    }
+
+    /* Remove button */
+    .remove-item {
+      color: #ff6b6b;
+      background: none;
+      border: none;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 8px;
+      padding: 2px 10px;
+      transition: background 0.16s;
+    }
+
+    .remove-item:hover {
+      background: rgba(255, 107, 107, 0.09);
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .totals {
+      margin-top: 10px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .totals .label {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .totals .value {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    /* Print styles */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+
+      .printable,
+      .printable * {
+        visibility: visible;
+      }
+
+      .printable {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+      }
+    }
+
+    /* Modal (login) redesign */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .modal {
+      background: var(--card);
+      padding: 34px 28px 24px;
+      width: 380px;
+      border-radius: 14px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .modal h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+
+    .modal .row {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .modal label {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .modal input[type="text"],
+    .modal input[type="password"] {
+      background: var(--bg);
+      border: 1.5px solid rgba(0, 188, 212, 0.18);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: inherit;
+      transition: border-color 0.18s, box-shadow 0.18s;
+      box-shadow: 0 2px 8px rgba(0, 188, 212, 0.07);
+      outline: none;
+      margin-bottom: 2px;
+    }
+
+    .modal input[type="text"]:focus,
+    .modal input[type="password"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 2px 12px rgba(0, 188, 212, 0.17);
+    }
+
+    .modal .error {
+      color: #ff6b6b;
+      font-size: 13px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      font-weight: 600;
+    }
+
+    .modal .modal-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 8px;
+    }
+
+    /* small screens */
+    @media (max-width:900px) {
+      .wrap {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .receipt-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .receipt-meta {
+        text-align: left;
+      }
+
+      .modal {
+        width: 98vw;
+        min-width: 0;
+        padding: 18px 8vw 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="brand">
+        <img src="logo-rect.png" alt="MN DevWorks logo">
+        <div>
+          <h1>MN DevWorks</h1>
+          <div class="tag">Forging Digital Solutions That Work.</div>
+        </div>
+      </div>
+
+      <div class="nav" role="navigation" aria-label="Main navigation">
+        <button class="navlink active" id="tab-overview">Overview</button>
+        <button class="navlink" id="tab-receipt">Receipt Generator</button>
+        <button class="navlink" id="btn-login">Login</button>
+        <button class="navlink" id="btn-logout" style="display:none;">Logout</button>
+      </div>
+    </div>
+
+    <!-- main layout -->
+    <div class="wrap">
+      <!-- LEFT PANEL -->
+      <aside class="panel left">
+        <img src="logo-rect.png" alt="MN DevWorks" class="logo">
+        <h2>MN DevWorks</h2>
+        <div class="tag">Forging Digital Solutions That Work.</div>
+
+        <p class="small muted" style="margin-top:10px;">
+          Mark &amp; Nash — Web, Embedded, and Custom Software development for startups and creators.
+        </p>
+
+        <div class="contacts">
+          <a class="btn primary" href="mailto:ooanteja23@gmail.com">Email</a>
+          <a class="btn" href="https://www.facebook.com/markchito" target="_blank">Facebook</a>
+          <a class="btn" href="tel:09511816599">Call</a>
+          <a class="btn" href="https://github.com/markchitoanteja" target="_blank">GitHub</a>
+        </div>
+
+        <h3 style="margin-top:18px;">Recent Projects</h3>
+        <div id="left-projects" class="grid" aria-live="polite">
+          <div class="loader" id="left-loader">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT PANEL -->
+      <main class="panel right">
+        <!-- Overview content -->
+        <section id="overview-section">
+          <h2 class="lead">Small Team. Big Results.</h2>
+          <p class="about">
+            MN DevWorks is Mark &amp; Nash — a hands-on developer partnership building web, embedded,
+            and software solutions for startups, students, and small teams. We combine engineering
+            craftsmanship with speed and reliability so your ideas become real, working products.
+          </p>
+
+          <h3 style="margin-top:10px;">GitHub Projects</h3>
+          <div id="loader" class="loader">
+            <span></span><span></span><span></span>
+          </div>
+
+          <div id="repo-list" class="grid" style="display:none;"></div>
+        </section>
+
+        <!-- Receipt Generator (hidden until login) -->
+        <section id="receipt-section" style="display:none;">
+          <div class="receipt-container" id="receipt-container">
+            <div class="receipt-header">
+              <div class="receipt-brand">
+                <img src="logo-rect.png" alt="MN DevWorks">
+                <div>
+                  <div style="font-weight:800;">MN DevWorks</div>
+                  <div class="small muted">Mark &amp; Nash · 09511816599 · ooanteja23@gmail.com</div>
+                  <div class="small muted">Forging Digital Solutions That Work.</div>
+                </div>
+              </div>
+              <div class="receipt-meta">
+                <div><strong>Invoice</strong> <span id="invoice-no">#0001</span></div>
+                <div class="small muted" id="invoice-date">Date: <span></span></div>
+              </div>
+            </div>
+
+            <!-- Receipt form -->
+            <form id="receipt-form">
+              <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <div style="flex:1;">
+                  <div class="field">
+                    <label>Bill To (Client Name)</label>
+                    <input type="text" id="client-name" placeholder="Client or Company name" required>
+                  </div>
+                  <div class="field">
+                    <label>Client Email / Contact</label>
+                    <input type="text" id="client-contact" placeholder="client@example.com">
+                  </div>
+                </div>
+
+                <div style="width:260px;">
+                  <div class="field">
+                    <label>Invoice #</label>
+                    <input type="text" id="invoice-number-input" value="">
+                  </div>
+                  <div class="field">
+                    <label>Date</label>
+                    <input type="text" id="invoice-date-input" value="">
+                  </div>
+                </div>
+              </div>
+
+              <h4 style="margin-top:8px;">Items / Services</h4>
+              <div style="overflow:auto;">
+                <table class="items" id="items-table" aria-live="polite">
+                  <thead>
+                    <tr>
+                      <th style="width:48%;">Description</th>
+                      <th style="width:12%;">Qty</th>
+                      <th style="width:18%;">Unit Price</th>
+                      <th style="width:18%;">Amount</th>
+                      <th style="width:4%;"></th>
+                    </tr>
+                  </thead>
+                  <tbody id="items-body">
+                    <!-- rows injected -->
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="controls">
+                <button type="button" class="btn" id="add-item">Add Item</button>
+                <div class="muted" style="margin-left:auto;">You can add/remove items. Totals update automatically.</div>
+              </div>
+
+              <div class="totals">
+                <div style="min-width:240px;">
+                  <div class="small muted">Notes</div>
+                  <textarea id="notes" placeholder="Add payment terms or notes (e.g. Due in 14 days)"></textarea>
+                </div>
+
+                <div style="min-width:220px;">
+                  <div style="display:flex;justify-content:space-between;">
+                    <div class="label muted">Subtotal</div>
+                    <div class="value" id="subtotal">₱0.00</div>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;margin-top:6px;">
+                    <div class="label muted">Tax (%)</div>
+                    <div><input type="number" id="tax-rate" value="0" min="0" style="width:80px;padding:6px;border-radius:8px;border:1.5px solid rgba(0,188,212,0.18);background:var(--bg);color:var(--text);"></div>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;margin-top:8px;">
+                    <div class="label muted">Tax Amount</div>
+                    <div class="value" id="tax-amt">₱0.00</div>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;margin-top:10px;border-top:1px solid rgba(255,255,255,0.04);padding-top:8px;">
+                    <div class="label muted">Total</div>
+                    <div class="value" id="total">₱0.00</div>
+                  </div>
+
+                  <div style="display:flex; gap:8px; margin-top:12px;">
+                    <button type="button" class="btn primary" id="btn-print" style="width:100%;">Print Receipt / Save PDF</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="muted small" style="margin-top:12px;">
+            Receipts are generated client-side and are printable. For secure record-keeping or multi-user access, connect to a server-side store.
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer style="margin-top:28px; text-align:center; color:var(--muted);">© MN DevWorks — Mark &amp; Nash. All rights reserved.</footer>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" style="display:none;">
+    <div class="modal" role="document" aria-labelledby="modal-title">
+      <h3 id="modal-title">MN DevWorks — Login</h3>
+      <div class="row">
+        <div class="field">
+          <label class="small muted">Username</label>
+          <input type="text" id="login-username" placeholder="username">
+        </div>
+        <div class="field">
+          <label class="small muted">Password</label>
+          <input type="password" id="login-password" placeholder="password">
+        </div>
+        <div class="error" id="login-error" style="display:none;"></div>
+        <div class="modal-actions">
+          <button class="btn" id="modal-cancel">Cancel</button>
+          <button class="btn primary" id="modal-login">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // -------------------------
+    // Fixed credentials (JSON)
+    // Change here later as needed.
+    // -------------------------
+    const CREDENTIALS = { "username": "admin", "password": "admin123" };
+
+    // Session key
+    const SESSION_KEY = "mndevworks_logged_in";
+
+    // UI elements
+    const tabOverview = document.getElementById("tab-overview");
+    const tabReceipt = document.getElementById("tab-receipt");
+    const overviewSection = document.getElementById("overview-section");
+    const receiptSection = document.getElementById("receipt-section");
+    const btnLogin = document.getElementById("btn-login");
+    const btnLogout = document.getElementById("btn-logout");
+    const modalBackdrop = document.getElementById("modal-backdrop");
+    const modalLogin = document.getElementById("modal-login");
+    const modalCancel = document.getElementById("modal-cancel");
+    const loginError = document.getElementById("login-error");
+
+    // Initialize navigation
+    function setActiveTab(tab) {
+      document.querySelectorAll(".nav .navlink").forEach(el => el.classList.remove("active"));
+      tab.classList.add("active");
+    }
+
+    tabOverview.addEventListener("click", () => {
+      setActiveTab(tabOverview);
+      overviewSection.style.display = "";
+      receiptSection.style.display = "none";
+    });
+
+    tabReceipt.addEventListener("click", () => {
+      setActiveTab(tabReceipt);
+      // If logged in, show receipt; otherwise prompt login
+      if (isLoggedIn()) {
+        showReceipt();
+      } else {
+        openLoginModal();
+      }
+    });
+
+    btnLogin.addEventListener("click", openLoginModal);
+    modalCancel.addEventListener("click", closeLoginModal);
+
+    function openLoginModal() {
+      modalBackdrop.style.display = "flex";
+      loginError.style.display = "none";
+      document.getElementById("login-username").value = "";
+      document.getElementById("login-password").value = "";
+      document.getElementById("login-username").focus();
+    }
+    function closeLoginModal() {
+      modalBackdrop.style.display = "none";
+    }
+
+    // Login flow
+    modalLogin.addEventListener("click", () => {
+      const u = document.getElementById("login-username").value.trim();
+      const p = document.getElementById("login-password").value;
+      if (u === CREDENTIALS.username && p === CREDENTIALS.password) {
+        sessionStorage.setItem(SESSION_KEY, "1");
+        closeLoginModal();
+        onLoginSuccess();
+      } else {
+        loginError.style.display = "block";
+        loginError.textContent = "Invalid username or password.";
+      }
+    });
+
+    function onLoginSuccess() {
+      btnLogin.style.display = "none";
+      btnLogout.style.display = "";
+      showReceipt();
+      setActiveTab(tabReceipt);
+    }
+
+    btnLogout.addEventListener("click", () => {
+      sessionStorage.removeItem(SESSION_KEY);
+      btnLogin.style.display = "";
+      btnLogout.style.display = "none";
+      // return to overview
+      setActiveTab(tabOverview);
+      overviewSection.style.display = "";
+      receiptSection.style.display = "none";
+    });
+
+    function isLoggedIn() {
+      return sessionStorage.getItem(SESSION_KEY) === "1";
+    }
+
+    // Initialize state based on session
+    if (isLoggedIn()) {
+      btnLogin.style.display = "none";
+      btnLogout.style.display = "";
+    }
+
+    // -------------------------
+    // GitHub Projects fetch
+    // -------------------------
+    const repoList = document.getElementById("repo-list");
+    const loader = document.getElementById("loader");
+    const leftProjects = document.getElementById("left-projects");
+    const leftLoader = document.getElementById("left-loader");
+
+    function fetchRepos() {
+      fetch("https://api.github.com/users/markchitoanteja/repos")
+        .then(res => res.json())
+        .then(repos => {
+          loader.style.display = "none";
+          leftLoader.style.display = "none";
+          repoList.style.display = "grid";
+
+          // main list (latest 6)
+          repos
+            .filter(r => !r.fork)
+            .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+            .slice(0, 6)
+            .forEach(repo => {
+              const div = document.createElement("div");
+              div.className = "cardbox";
+              div.innerHTML = `<h4>${escapeHTML(repo.name)}</h4><p class="small">${escapeHTML(repo.description || "No description.")}</p><a href="${repo.html_url}" target="_blank" class="small muted">View on GitHub →</a>`;
+              repoList.appendChild(div);
+            });
+
+          // left side: latest 3
+          repos
+            .filter(r => !r.fork)
+            .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+            .slice(0, 3)
+            .forEach(repo => {
+              const div = document.createElement("div");
+              div.className = "cardbox";
+              div.innerHTML = `<h4>${escapeHTML(repo.name)}</h4><p class="small">${escapeHTML(repo.description || "No description.")}</p>`;
+              leftProjects.appendChild(div);
+            });
+        })
+        .catch(err => {
+          console.error("Error loading repos:", err);
+          loader.style.display = "none";
+          leftLoader.style.display = "none";
+          repoList.style.display = "block";
+          repoList.innerHTML = "<p class='small muted'>Failed to load GitHub projects.</p>";
+          leftProjects.innerHTML = "<p class='small muted'>Failed to load.</p>";
+        });
+    }
+
+    function escapeHTML(str) {
+      return String(str).replace(/[&<>"']/g, s => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[s]));
+    }
+
+    fetchRepos();
+
+    // -------------------------
+    // Receipt generator
+    // -------------------------
+    const receiptContainer = document.getElementById("receipt-container");
+    const invoiceNoEl = document.getElementById("invoice-no");
+    const invoiceDateEl = document.getElementById("invoice-date").querySelector("span");
+    const invoiceNumberInput = document.getElementById("invoice-number-input");
+    const invoiceDateInput = document.getElementById("invoice-date-input");
+    const itemsBody = document.getElementById("items-body");
+    const addItemBtn = document.getElementById("add-item");
+    const subtotalEl = document.getElementById("subtotal");
+    const taxRateEl = document.getElementById("tax-rate");
+    const taxAmtEl = document.getElementById("tax-amt");
+    const totalEl = document.getElementById("total");
+    const btnPrint = document.getElementById("btn-print");
+    const notesEl = document.getElementById("notes");
+    const clientNameEl = document.getElementById("client-name");
+    const clientContactEl = document.getElementById("client-contact");
+
+    function showReceipt() {
+      overviewSection.style.display = "none";
+      receiptSection.style.display = "";
+      receiptContainer.style.display = "flex";
+
+      // populate defaults
+      const today = new Date();
+      invoiceDateEl.textContent = today.toLocaleDateString();
+      invoiceDateInput.value = today.toLocaleDateString();
+      if (!invoiceNumberInput.value) {
+        invoiceNumberInput.value = "MN-" + today.getFullYear().toString().slice(-2) + ("0" + (today.getMonth() + 1)).slice(-2) + ("0" + today.getDate()).slice(-2) + "-" + Math.floor(Math.random() * 900 + 100);
+      }
+      invoiceNoEl.textContent = invoiceNumberInput.value;
+      invoiceNumberInput.addEventListener("input", () => invoiceNoEl.textContent = invoiceNumberInput.value || "#0001");
+      invoiceDateInput.addEventListener("input", () => invoiceDateEl.textContent = invoiceDateInput.value);
+
+      // If no items, add a starter row
+      if (!itemsBody.children.length) addItemRow();
+    }
+
+    // Add item row (improved UI)
+    function addItemRow(desc = "", qty = 1, price = 0) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>
+          <input type="text" class="item-desc" placeholder="Service description" value="${escapeAttr(desc)}">
+        </td>
+        <td>
+          <input type="number" class="item-qty" value="${qty}" min="0">
+        </td>
+        <td>
+          <input type="number" class="item-price" value="${price}" min="0" step="0.01">
+        </td>
+        <td class="item-amount">₱0.00</td>
+        <td>
+          <button type="button" class="remove-item" title="Remove item">✕</button>
+        </td>
+      `;
+      itemsBody.appendChild(tr);
+
+      tr.querySelectorAll('.item-qty, .item-price, .item-desc').forEach(el => el.addEventListener('input', recalcTotals));
+      tr.querySelector('.remove-item').addEventListener('click', () => { tr.remove(); recalcTotals(); });
+      recalcTotals();
+    }
+
+    function escapeAttr(s) { return String(s).replace(/"/g, '&quot;'); }
+
+    addItemBtn.addEventListener('click', () => addItemRow());
+
+    function recalcTotals() {
+      let subtotal = 0;
+      Array.from(itemsBody.children).forEach(tr => {
+        const q = parseFloat(tr.querySelector('.item-qty').value) || 0;
+        const p = parseFloat(tr.querySelector('.item-price').value) || 0;
+        const amount = q * p;
+        tr.querySelector('.item-amount').textContent = formatCurrency(amount);
+        subtotal += amount;
+      });
+      subtotalEl.textContent = formatCurrency(subtotal);
+      const taxRate = parseFloat(taxRateEl.value) || 0;
+      const taxAmt = subtotal * (taxRate / 100);
+      taxAmtEl.textContent = formatCurrency(taxAmt);
+      totalEl.textContent = formatCurrency(subtotal + taxAmt);
+    }
+
+    function formatCurrency(v) {
+      // Philippine peso format, no need for locale to ensure consistent display
+      return '₱' + Number(v).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    taxRateEl.addEventListener('input', recalcTotals);
+
+    // Print / Save
+    btnPrint.addEventListener('click', () => {
+      // Prepare printable content: clone receipt and open print (print only the printable area)
+      const printable = buildPrintableReceipt();
+      // Temporarily append printable to body and print
+      const wrapper = document.createElement('div');
+      wrapper.className = "printable";
+      wrapper.style.padding = "24px";
+      wrapper.appendChild(printable);
+      document.body.appendChild(wrapper);
+      window.print();
+      document.body.removeChild(wrapper);
+    });
+
+    function buildPrintableReceipt() {
+      const wrap = document.createElement('div');
+      wrap.style.background = '#fff';
+      wrap.style.color = '#000';
+      wrap.style.padding = '20px';
+      wrap.style.fontFamily = 'Arial, Helvetica, sans-serif';
+      wrap.style.width = '800px';
+      wrap.style.boxSizing = 'border-box';
+
+      // Header
+      const header = document.createElement('div');
+      header.style.display = 'flex';
+      header.style.justifyContent = 'space-between';
+      header.style.alignItems = 'center';
+      header.style.marginBottom = '12px';
+
+      // logo left
+      const logo = document.createElement('img');
+      logo.src = 'logo-rect.png';
+      logo.style.width = '140px';
+      logo.style.height = 'auto';
+      logo.alt = 'MN DevWorks';
+      header.appendChild(logo);
+
+      // meta right
+      const meta = document.createElement('div');
+      meta.style.textAlign = 'right';
+      meta.innerHTML = `<div style="font-weight:700;font-size:18px;">MN DevWorks</div>
+                        <div style="font-size:13px;color:#444;">Mark &amp; Nash · 09511816599 · ooanteja23@gmail.com</div>
+                        <div style="margin-top:6px;font-size:13px;">Invoice: ${escapeHTML(invoiceNumberInput.value || invoiceNoEl.textContent)}<br>Date: ${escapeHTML(invoiceDateInput.value || invoiceDateEl.textContent)}</div>`;
+      header.appendChild(meta);
+
+      wrap.appendChild(header);
+
+      // Client
+      const client = document.createElement('div');
+      client.style.marginBottom = '12px';
+      client.innerHTML = `<div style="font-weight:700;">Bill To</div><div>${escapeHTML(clientNameEl.value || '')}</div><div style="color:#444;">${escapeHTML(clientContactEl.value || '')}</div>`;
+      wrap.appendChild(client);
+
+      // Items
+      const table = document.createElement('table');
+      table.style.width = '100%';
+      table.style.borderCollapse = 'collapse';
+      table.innerHTML = `<thead>
+        <tr style="border-bottom:1px solid #ddd;">
+          <th style="text-align:left;padding:8px;">Description</th>
+          <th style="text-align:right;padding:8px;width:80px;">Qty</th>
+          <th style="text-align:right;padding:8px;width:140px;">Unit Price</th>
+          <th style="text-align:right;padding:8px;width:140px;">Amount</th>
+        </tr>
+      </thead>`;
+      const tbody = document.createElement('tbody');
+      Array.from(itemsBody.children).forEach(tr => {
+        const desc = tr.querySelector('.item-desc').value;
+        const qty = parseFloat(tr.querySelector('.item-qty').value) || 0;
+        const price = parseFloat(tr.querySelector('.item-price').value) || 0;
+        const amount = qty * price;
+        const row = document.createElement('tr');
+        row.innerHTML = `<td style="padding:8px;border-bottom:1px solid #eee;">${escapeHTML(desc)}</td>
+                         <td style="padding:8px;border-bottom:1px solid #eee;text-align:right;">${qty}</td>
+                         <td style="padding:8px;border-bottom:1px solid #eee;text-align:right;">${formatCurrency(price)}</td>
+                         <td style="padding:8px;border-bottom:1px solid #eee;text-align:right;">${formatCurrency(amount)}</td>`;
+        tbody.appendChild(row);
+      });
+      table.appendChild(tbody);
+      wrap.appendChild(table);
+
+      // Totals
+      const totalsDiv = document.createElement('div');
+      totalsDiv.style.display = 'flex';
+      totalsDiv.style.justifyContent = 'flex-end';
+      totalsDiv.style.marginTop = '14px';
+      totalsDiv.innerHTML = `<div style="width:300px;">
+        <div style="display:flex;justify-content:space-between;padding:6px 0;"><div style="color:#666;">Subtotal</div><div style="font-weight:700;">${subtotalEl.textContent}</div></div>
+        <div style="display:flex;justify-content:space-between;padding:6px 0;"><div style="color:#666;">Tax (${taxRateEl.value || 0}%)</div><div style="font-weight:700;">${taxAmtEl.textContent}</div></div>
+        <div style="border-top:1px solid #ddd;padding-top:8px;display:flex;justify-content:space-between;"><div style="font-weight:700;">Total</div><div style="font-weight:900;font-size:16px;">${totalEl.textContent}</div></div>
+      </div>`;
+      wrap.appendChild(totalsDiv);
+
+      // Notes
+      if (notesEl.value) {
+        const notes = document.createElement('div');
+        notes.style.marginTop = '12px';
+        notes.innerHTML = `<div style="font-weight:700;margin-bottom:6px;">Notes</div><div style="color:#444;">${escapeHTML(notesEl.value)}</div>`;
+        wrap.appendChild(notes);
+      }
+
+      return wrap;
+    }
+
+    // Helper: escape for printable HTML
+    function escapeHTML(str) {
+      return String(str || '').replace(/[&<>"']/g, s => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[s]));
+    }
+
+    // Update totals on changes
+    itemsBody.addEventListener('input', recalcTotals);
+
+    // helper: when invoice input changes update header
+    invoiceNumberInput.addEventListener('input', () => invoiceNoEl.textContent = invoiceNumberInput.value || "#0001");
+    invoiceDateInput.addEventListener('input', () => invoiceDateEl.textContent = invoiceDateInput.value || "");
+
+    // Accessibility: close modal on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        modalBackdrop.style.display = 'none';
+      }
+    });
+
+    // Utility: if user is logged in and tab=receipt on load, open receipt
+    if (isLoggedIn() && window.location.hash === "#receipt") {
+      setActiveTab(tabReceipt);
+      showReceipt();
+    }
+
+    // Initially show overview
+    setActiveTab(tabOverview);
+
+  </script>
+</body>
+
+</html>

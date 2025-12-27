@@ -2,279 +2,313 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <title>Kuya Mark Wi-Fi Payment Ledger</title>
 
-    <title>Mark Chito - Freelance Web Developer</title>
-    <meta name="description" content="Mark Chito is a freelance web developer specializing in PHP (CodeIgniter), Bootstrap, jQuery, and modern frontend technologies. Let's build something great together!">
-    <meta name="keywords" content="Mark Chito, Web Developer, PHP, CodeIgniter, Bootstrap, jQuery, Freelance Web Developer, Frontend, Backend, Software Engineer">
-    <meta name="author" content="Mark Chito">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://markchitoanteja.github.io/">
-    <meta property="og:title" content="Mark Chito - Freelance Web Developer">
-    <meta property="og:description" content="Freelance web developer specializing in PHP (CodeIgniter), Bootstrap, jQuery, and modern frontend technologies.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?fit=crop&w=1200&q=80">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://markchitoanteja.github.io/">
-    <meta name="twitter:title" content="Mark Chito - Freelance Web Developer">
-    <meta name="twitter:description" content="Freelance web developer specializing in PHP (CodeIgniter), Bootstrap, jQuery, and modern frontend technologies.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?fit=crop&w=1200&q=80">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <!-- Favicon -->
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" type="image/png">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Bootstrap & Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Custom Styles -->
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f8f9fa;
-            scroll-behavior: smooth;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?fit=crop&w=1350&q=80') center/cover no-repeat;
-            color: #fff;
-            padding: 140px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-weight: 700;
-            font-size: 3.2rem;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-top: 1rem;
-        }
-
-        .tech-card {
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: none;
-        }
-
-        .tech-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .tech-card img {
-            max-height: 60px;
-            object-fit: contain;
-            margin-top: 15px;
-        }
-
-        .section-title {
-            font-weight: 600;
-            margin-bottom: 40px;
-        }
-
-        .nav-tabs-custom {
-            border-bottom: none;
-            margin-bottom: 2rem;
-            justify-content: center;
-            gap: 2px;
-        }
-
-        .nav-tabs-custom .nav-link {
-            font-size: 1.08rem;
-            font-weight: 500;
-            color: #333;
-            background: #fff;
-            border: 1px solid #dee2e6;
-            border-bottom: 2px solid transparent;
-            border-radius: 6px 6px 0 0;
-            margin: 0 4px;
-            transition: color 0.22s, background 0.22s, border 0.22s;
-        }
-
-        .nav-tabs-custom .nav-link.active,
-        .nav-tabs-custom .nav-link:hover {
-            color: #007bff;
-            background: #f3f6fb;
-            border-bottom: 2px solid #007bff;
-        }
-
-        .nav-tabs-custom .nav-link .bi {
-            margin-right: 3px;
-        }
-
-        footer {
-            font-size: 0.95rem;
-        }
-    </style>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body>
+<body class="bg-light">
 
-    <!-- Navigation Tabs -->
-    <nav class="container mt-4">
-        <ul class="nav nav-tabs nav-tabs-custom" id="mainTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a class="nav-link active" href="#home" id="home-tab" aria-controls="home" aria-selected="true">
-                    <i class="bi bi-house-door"></i> Home
-                </a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" href="#about" id="about-tab" aria-controls="about" aria-selected="false">
-                    <i class="bi bi-person"></i> About
-                </a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" href="#tech" id="tech-tab" aria-controls="tech" aria-selected="false">
-                    <i class="bi bi-code-slash"></i> Tech Stack
-                </a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" href="#contact" id="contact-tab" aria-controls="contact" aria-selected="false">
-                    <i class="bi bi-envelope"></i> Contact
-                </a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" href="mndevworks" id="mndevworks-tab" aria-controls="mndevworks" aria-selected="false">
-                    <i class="bi bi-diagram-3"></i> MN DevWorks
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-body">
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Hi, I'm Mark Chito</h1>
-            <p class="lead">Freelance Web Developer</p>
-            <a href="#about" class="btn btn-outline-light btn-lg mt-3">Explore More</a>
-        </div>
-    </section>
+                <!-- Header -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="mb-0">Internet Client Payment Ledger</h4>
+                    <div class="btn-group">
+                        <button class="btn btn-outline-primary" id="openDbBtn">Open Database</button>
+                        <button class="btn btn-outline-success" id="exportBtn" disabled>Export</button>
+                    </div>
+                </div>
 
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">About Me</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <p class="lead">
-                        I’m a freelance web developer with a focus on creating dynamic, scalable, and user-friendly web applications.
-                        My expertise lies in PHP (CodeIgniter), Bootstrap, jQuery, and modern frontend frameworks.
-                    </p>
-                    <p>
-                        I’m passionate about clean code, performance optimization, and solving complex problems with simple, elegant solutions.
-                        Let’s bring your ideas to life with robust, maintainable web systems.
-                    </p>
+                <!-- Month Selection -->
+                <div class="mb-3 d-flex gap-2">
+                    <label class="form-label mb-0">Select Month:</label>
+                    <select class="form-select" id="monthSelect" style="width:auto;" disabled></select>
+                    <button class="btn btn-outline-secondary" id="addMonthBtn" disabled>Add New Month</button>
+                </div>
+
+                <!-- Add Client -->
+                <button class="btn btn-primary mb-3" id="addBtn" disabled>Add Client</button>
+
+                <!-- Table -->
+                <table class="table table-bordered table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Client</th>
+                            <th>Amount</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                            <th style="width:220px">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td colspan="5" class="text-center text-muted">No database loaded</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="fw-bold mt-2">
+                    Paid: ₱<span id="paidTotal">0</span> |
+                    Partially Paid: ₱<span id="partialTotal">0</span> |
+                    Unpaid: ₱<span id="unpaidTotal">0</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Tech Stack Section -->
-    <section id="tech" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title text-center">Tech Stack</h2>
-            <div class="row g-4 justify-content-center">
-                <!-- PHP -->
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="card tech-card text-center p-3">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP Logo">
-                        <div class="card-body">
-                            <h6 class="card-title">PHP</h6>
-                        </div>
+    <!-- Modal -->
+    <div class="modal fade" id="recordModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Client Payment</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="recordIndex">
+                    <div class="mb-3">
+                        <label class="form-label">Client Name</label>
+                        <input class="form-control" id="name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Amount (₱)</label>
+                        <input type="number" class="form-control" id="amount">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Due Date</label>
+                        <input class="form-control" id="dueDate" placeholder="e.g. December 5">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Payment Status</label>
+                        <select class="form-select" id="status">
+                            <option value="Fully Paid">Fully Paid</option>
+                            <option value="Partially Paid">Partially Paid</option>
+                            <option value="Unpaid">Unpaid</option>
+                        </select>
                     </div>
                 </div>
-                <!-- CodeIgniter -->
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="card tech-card text-center p-3">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain-wordmark.svg" alt="CodeIgniter Logo">
-                        <div class="card-body">
-                            <h6 class="card-title">CodeIgniter</h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- Bootstrap -->
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="card tech-card text-center p-3">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" alt="Bootstrap Logo">
-                        <div class="card-body">
-                            <h6 class="card-title">Bootstrap</h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- jQuery -->
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="card tech-card text-center p-3">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery Logo">
-                        <div class="card-body">
-                            <h6 class="card-title">jQuery</h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- HTML -->
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="card tech-card text-center p-3">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Frontend Frameworks">
-                        <div class="card-body">
-                            <h6 class="card-title">HTML</h6>
-                        </div>
-                    </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary" id="saveBtn">Save</button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container text-center">
-            <h2 class="section-title">Get in Touch</h2>
-            <p class="mb-4">Let’s build something great together. You can reach me via:</p>
-            <div class="d-flex flex-wrap justify-content-center gap-3">
-                <a href="mailto:00anteja23@gmail.com" class="btn btn-outline-primary">
-                    <i class="bi bi-envelope"></i> Email Me
-                </a>
-                <a href="https://github.com/markchitoanteja" target="_blank" class="btn btn-outline-dark">
-                    <i class="bi bi-github"></i> GitHub
-                </a>
-                <a href="https://www.facebook.com/markchito" target="_blank" class="btn btn-outline-primary">
-                    <i class="bi bi-facebook"></i> Facebook
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-3 bg-dark text-light text-center">
-        <div class="container">
-            &copy; 2025 Mark Chito Anteja. All rights reserved.
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Optional: Smooth scroll for nav tabs -->
     <script>
-        document.querySelectorAll('.nav-tabs-custom .nav-link[href^="#"]').forEach(function (link) {
-            link.addEventListener('click', function (e) {
-                var target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    window.scrollTo({
-                        top: target.offsetTop - 40,
-                        behavior: 'smooth'
-                    });
-                    // Set active tab styling
-                    document.querySelectorAll('.nav-tabs-custom .nav-link').forEach(function (tab) {
-                        tab.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                }
+        let fileHandle = null;
+        let db = { months: {} };
+        let selectedMonth = null;
+        const modal = new bootstrap.Modal("#recordModal");
+
+        /* ---------- DATABASE ---------- */
+
+        // Open database
+        $("#openDbBtn").on("click", async () => {
+            try {
+                [fileHandle] = await window.showOpenFilePicker({
+                    types: [{ accept: { "application/json": [".json"] } }]
+                });
+                const file = await fileHandle.getFile();
+                db = JSON.parse(await file.text());
+                if (!db.months) db.months = {};
+                populateMonths();
+                Swal.fire("Database Loaded", "You can now manage records.", "success");
+            } catch {
+                Swal.fire("Cancelled", "No database selected.", "info");
+            }
+        });
+
+        // Save database
+        async function saveDatabase() {
+            if (!fileHandle) return;
+            const writable = await fileHandle.createWritable();
+            await writable.write(JSON.stringify(db, null, 2));
+            await writable.close();
+        }
+
+        /* ---------- MONTH MANAGEMENT ---------- */
+
+        function populateMonths() {
+            const monthSelect = $("#monthSelect");
+            monthSelect.empty();
+
+            const monthKeys = Object.keys(db.months);
+            monthKeys.forEach(m => monthSelect.append(`<option value="${m}">${m}</option>`));
+
+            if (monthKeys.length) {
+                selectedMonth = monthKeys[0];
+                monthSelect.val(selectedMonth);
+                renderTable();
+            } else {
+                selectedMonth = null;
+                $("#tableBody").html('<tr><td colspan="5" class="text-center text-muted">No records</td></tr>');
+            }
+
+            $("#monthSelect, #addMonthBtn, #addBtn, #exportBtn").prop("disabled", false);
+        }
+
+        // Add new month
+        $("#addMonthBtn").on("click", async () => {
+            const { value: monthName } = await Swal.fire({
+                title: 'New Month',
+                input: 'text',
+                inputLabel: 'Enter Month-Year (e.g., December-2025)',
+                showCancelButton: true,
+                inputValidator: value => !value ? 'Month name required' : null
             });
+
+            if (!monthName) return;
+            if (!db.months[monthName]) db.months[monthName] = [];
+            selectedMonth = monthName;
+            populateMonths();
+            $("#monthSelect").val(selectedMonth);
+            renderTable();
+            await saveDatabase();
+        });
+
+        /* ---------- EXPORT ---------- */
+
+        $("#exportBtn").on("click", () => {
+            const safeFilename = `internet-payments.json`;
+            const blob = new Blob([JSON.stringify(db, null, 2)], { type: "application/json" });
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = safeFilename;
+            a.click();
+            URL.revokeObjectURL(a.href);
+            Swal.fire("Exported", `Saved as ${safeFilename}`, "success");
+        });
+
+        /* ---------- TABLE / UI ---------- */
+
+        function renderTable() {
+            const tbody = $("#tableBody").empty();
+            if (!selectedMonth || !db.months[selectedMonth]?.length) {
+                tbody.append('<tr><td colspan="5" class="text-center text-muted">No records</td></tr>');
+                updateTotals();
+                return;
+            }
+
+            let fully = 0, partial = 0, unpaid = 0;
+            db.months[selectedMonth].forEach((c, i) => {
+                if (c.status === "Fully Paid") fully += c.amount;
+                else if (c.status === "Partially Paid") partial += c.amount;
+                else unpaid += c.amount;
+
+                tbody.append(`
+      <tr>
+        <td>${c.name}</td>
+        <td>₱${c.amount}</td>
+        <td>${c.dueDate}</td>
+        <td class="${c.status === 'Fully Paid' ? 'text-success' : c.status === 'Partially Paid' ? 'text-warning' : 'text-danger'} fw-bold">${c.status}</td>
+        <td>
+          <button class="btn btn-sm btn-info receiptBtn" data-i="${i}">Receipt</button>
+          <button class="btn btn-sm btn-warning editBtn" data-i="${i}">Edit</button>
+          <button class="btn btn-sm btn-danger deleteBtn" data-i="${i}">Delete</button>
+        </td>
+      </tr>
+    `);
+            });
+            $("#paidTotal").text(fully);
+            $("#partialTotal").text(partial);
+            $("#unpaidTotal").text(unpaid);
+        }
+
+        function updateTotals() {
+            $("#paidTotal").text(0);
+            $("#partialTotal").text(0);
+            $("#unpaidTotal").text(0);
+        }
+
+        /* ---------- CRUD ---------- */
+
+        $("#addBtn").on("click", () => {
+            $("#recordIndex").val("");
+            $("#name, #amount, #dueDate").val("");
+            $("#status").val("Fully Paid");
+            modal.show();
+        });
+
+        $("#saveBtn").on("click", async () => {
+            if (!selectedMonth) return Swal.fire("Error", "No month selected", "error");
+
+            const record = {
+                name: $("#name").val().trim(),
+                amount: Number($("#amount").val()),
+                dueDate: $("#dueDate").val().trim(),
+                status: $("#status").val()
+            };
+            if (!record.name || !record.amount || !record.dueDate)
+                return Swal.fire("Invalid Input", "All fields are required", "error");
+
+            const idx = $("#recordIndex").val();
+            if (idx === "") db.months[selectedMonth].push(record);
+            else db.months[selectedMonth][idx] = record;
+
+            await saveDatabase();
+            renderTable();
+            modal.hide();
+            Swal.fire("Saved", "Record updated successfully", "success");
+        });
+
+        $("#tableBody").on("click", ".editBtn", function () {
+            const idx = $(this).data("i");
+            const c = db.months[selectedMonth][idx];
+            $("#recordIndex").val(idx);
+            $("#name").val(c.name);
+            $("#amount").val(c.amount);
+            $("#dueDate").val(c.dueDate);
+            $("#status").val(c.status);
+            modal.show();
+        });
+
+        $("#tableBody").on("click", ".deleteBtn", async function () {
+            const idx = $(this).data("i");
+            const res = await Swal.fire({
+                title: "Delete Record?",
+                text: "This action cannot be undone.",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Delete"
+            });
+            if (!res.isConfirmed) return;
+            db.months[selectedMonth].splice(idx, 1);
+            await saveDatabase();
+            renderTable();
+            Swal.fire("Deleted", "Record removed.", "success");
+        });
+
+        /* ---------- MONTH CHANGE ---------- */
+
+        $("#monthSelect").on("change", function () {
+            selectedMonth = $(this).val();
+            renderTable();
+        });
+
+        /* ---------- RECEIPT GENERATION ---------- */
+        $("#tableBody").on("click", ".receiptBtn", function () {
+            const idx = $(this).data("i");
+            const client = db.months[selectedMonth][idx];
+
+            const url = `receipt.html?month=${encodeURIComponent(selectedMonth)}&name=${encodeURIComponent(client.name)}&amount=${encodeURIComponent(client.amount)}.00&dueDate=${encodeURIComponent(client.dueDate)}&status=${encodeURIComponent(client.status)}`;
+            window.open(url, '_blank');
         });
     </script>
 </body>

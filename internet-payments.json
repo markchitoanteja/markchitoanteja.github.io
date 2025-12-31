@@ -1,0 +1,141 @@
+{
+  "months": {
+    "December-2025": [
+      {
+        "name": "Mercia Borja",
+        "amount": 1000,
+        "dueDate": "December 30",
+        "status": "Fully Paid"
+      },
+      {
+        "name": "Vilma Lazarra",
+        "amount": 500,
+        "dueDate": "Dacember 30",
+        "status": "Partially Paid"
+      }
+    ],
+    "January-2026": [
+      {
+        "name": "Blessie Comeo",
+        "amount": 1000,
+        "dueDate": "January 5",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Emma Renon",
+        "amount": 1000,
+        "dueDate": "January 5",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Josephine Macawile Taan",
+        "amount": 1500,
+        "dueDate": "January 5",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Normita Anteja",
+        "amount": 1000,
+        "dueDate": "January 5",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Rina Samantila",
+        "amount": 1000,
+        "dueDate": "January 5",
+        "status": "Fully Paid"
+      },
+      {
+        "name": "Sharon Diu",
+        "amount": 1500,
+        "dueDate": "January 5",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Rona Lazarra",
+        "amount": 1000,
+        "dueDate": "January 5",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Annabel Macawile Mandariza",
+        "amount": 1000,
+        "dueDate": "January 10",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Bonafacia Cesista",
+        "amount": 1000,
+        "dueDate": "January 10",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Gemalyn Nebril",
+        "amount": 1000,
+        "dueDate": "January 15",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Edito Resano",
+        "amount": 1000,
+        "dueDate": "January 15",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Christian Paul Duran Montallana",
+        "amount": 1000,
+        "dueDate": "January 20",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Edna Norombaba",
+        "amount": 600,
+        "dueDate": "January 20",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Marie Vic Gupa",
+        "amount": 1000,
+        "dueDate": "January 20",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Jovelyn Cañete",
+        "amount": 1000,
+        "dueDate": "January 20",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Grace A. Mengote",
+        "amount": 1000,
+        "dueDate": "January 30",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Marshel Lazarra",
+        "amount": 1000,
+        "dueDate": "January 30",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Mercia Borja",
+        "amount": 1000,
+        "dueDate": "January 30",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Vilma Lazarra",
+        "amount": 1000,
+        "dueDate": "January 30",
+        "status": "Unpaid"
+      },
+      {
+        "name": "Farven Alota",
+        "amount": 1000,
+        "dueDate": "January 30",
+        "status": "Unpaid"
+      }
+    ],
+    "February-2026": []
+  }
+}

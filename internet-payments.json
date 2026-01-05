@@ -31,7 +31,7 @@
         "name": "Josephine Macawile Taan",
         "amount": 1500,
         "dueDate": "January 5",
-        "status": "Unpaid"
+        "status": "Fully Paid"
       },
       {
         "name": "Normita Anteja",
@@ -49,7 +49,7 @@
         "name": "Sharon Diu",
         "amount": 1500,
         "dueDate": "January 5",
-        "status": "Unpaid"
+        "status": "Fully Paid"
       },
       {
         "name": "Rona Lazarra",
@@ -61,7 +61,7 @@
         "name": "Annabel Macawile Mandariza",
         "amount": 1000,
         "dueDate": "January 10",
-        "status": "Unpaid"
+        "status": "Fully Paid"
       },
       {
         "name": "Bonafacia Cesista",

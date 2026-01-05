@@ -145,6 +145,33 @@ function updateClientCount() {
 
 /* ---------- CRUD ---------- */
 
+function generateReceiptNumber(monthKey) {
+    const monthMap = {
+        "January": "JAN",
+        "February": "FEB",
+        "March": "MAR",
+        "April": "APR",
+        "May": "MAY",
+        "June": "JUN",
+        "July": "JUL",
+        "August": "AUG",
+        "September": "SEP",
+        "October": "OCT",
+        "November": "NOV",
+        "December": "DEC"
+    };
+
+    const [month, year] = monthKey.split("-");
+    const prefix = `${monthMap[month]}-${year}`;
+
+    const receipts = db.months[monthKey]
+        .map(r => r.receiptNumber)
+        .filter(r => r && r.startsWith(prefix));
+
+    const nextNumber = String(receipts.length + 1).padStart(3, "0");
+    return `${prefix}-${nextNumber}`;
+}
+
 $("#addBtn").on("click", () => {
     $("#recordIndex").val("");
     $("#name, #amount, #dueDate").val("");
@@ -153,24 +180,49 @@ $("#addBtn").on("click", () => {
 });
 
 $("#saveBtn").on("click", async () => {
-    if (!selectedMonth) return Swal.fire("Error", "No month selected", "error");
+    if (!selectedMonth)
+        return Swal.fire("Error", "No month selected", "error");
 
-    const record = {
+    const idx = $("#recordIndex").val();
+    const status = $("#status").val();
+
+    let record = {
         name: $("#name").val().trim(),
         amount: Number($("#amount").val()),
         dueDate: $("#dueDate").val().trim(),
-        status: $("#status").val()
+        status: status,
+        receiptNumber: null
     };
+
     if (!record.name || !record.amount || !record.dueDate)
         return Swal.fire("Invalid Input", "All fields are required", "error");
 
-    const idx = $("#recordIndex").val();
-    if (idx === "") db.months[selectedMonth].push(record);
-    else db.months[selectedMonth][idx] = record;
+    // If editing, preserve existing receipt number
+    if (idx !== "") {
+        const oldRecord = db.months[selectedMonth][idx];
+        record.receiptNumber = oldRecord.receiptNumber;
+    }
+
+    // Generate receipt number ONLY when Fully Paid and none exists
+    if (status === "Fully Paid" && !record.receiptNumber) {
+        record.receiptNumber = generateReceiptNumber(selectedMonth);
+    }
+
+    // Clear receipt if status is not fully paid
+    if (status !== "Fully Paid") {
+        record.receiptNumber = null;
+    }
+
+    if (idx === "") {
+        db.months[selectedMonth].push(record);
+    } else {
+        db.months[selectedMonth][idx] = record;
+    }
 
     await saveDatabase();
     renderTable();
     modal.hide();
+
     Swal.fire("Saved", "Record updated successfully", "success");
 });
 
@@ -213,6 +265,22 @@ $("#tableBody").on("click", ".receiptBtn", function () {
     const idx = $(this).data("i");
     const client = db.months[selectedMonth][idx];
 
-    const url = `receipt.html?month=${encodeURIComponent(selectedMonth)}&name=${encodeURIComponent(client.name)}&amount=${encodeURIComponent(client.amount)}.00&dueDate=${encodeURIComponent(client.dueDate)}&status=${encodeURIComponent(client.status)}`;
-    window.open(url, '_blank');
+    // Safety check: only allow receipt if fully paid and has receipt number
+    if (client.status !== "Fully Paid" || !client.receiptNumber) {
+        return Swal.fire(
+            "Receipt Not Available",
+            "Receipt can only be generated for fully paid clients.",
+            "warning"
+        );
+    }
+
+    const url = `receipt.html?` +
+        `month=${encodeURIComponent(selectedMonth)}` +
+        `&name=${encodeURIComponent(client.name)}` +
+        `&amount=${encodeURIComponent(client.amount)}.00` +
+        `&dueDate=${encodeURIComponent(client.dueDate)}` +
+        `&status=${encodeURIComponent(client.status)}` +
+        `&receiptNumber=${encodeURIComponent(client.receiptNumber)}`;
+
+    window.open(url, "_blank");
 });

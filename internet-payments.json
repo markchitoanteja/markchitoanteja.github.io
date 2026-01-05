@@ -5,13 +5,15 @@
         "name": "Mercia Borja",
         "amount": 1000,
         "dueDate": "December 30",
-        "status": "Fully Paid"
+        "status": "Fully Paid",
+        "receiptNumber": "DEC-2025-001"
       },
       {
         "name": "Vilma Lazarra",
         "amount": 500,
         "dueDate": "December 30",
-        "status": "Partially Paid"
+        "status": "Fully Paid",
+        "receiptNumber": "DEC-2025-002"
       }
     ],
     "January-2026": [
@@ -19,121 +21,141 @@
         "name": "Blessie Comeo",
         "amount": 1000,
         "dueDate": "January 5",
-        "status": "Unpaid"
+        "status": "Unpaid",
+        "receiptNumber": null
       },
       {
         "name": "Emma Renon",
         "amount": 1000,
         "dueDate": "January 5",
-        "status": "Unpaid"
+        "status": "Unpaid",
+        "receiptNumber": null
       },
       {
         "name": "Josephine Macawile Taan",
         "amount": 1500,
         "dueDate": "January 5",
-        "status": "Fully Paid"
+        "status": "Fully Paid",
+        "receiptNumber": "JAN-2026-001"
       },
       {
         "name": "Normita Anteja",
         "amount": 1000,
         "dueDate": "January 5",
-        "status": "Fully Paid"
+        "status": "Fully Paid",
+        "receiptNumber": "JAN-2026-002"
       },
       {
         "name": "Rina Samantila",
         "amount": 1000,
         "dueDate": "January 5",
-        "status": "Fully Paid"
+        "status": "Fully Paid",
+        "receiptNumber": "JAN-2026-003"
       },
       {
         "name": "Sharon Diu",
         "amount": 1500,
         "dueDate": "January 5",
-        "status": "Fully Paid"
+        "status": "Fully Paid",
+        "receiptNumber": "JAN-2026-004"
       },
       {
         "name": "Rona Lazarra",
         "amount": 1000,
         "dueDate": "January 5",
-        "status": "Unpaid"
+        "status": "Unpaid",
+        "receiptNumber": null
       },
       {
         "name": "Annabel Macawile Mandariza",
         "amount": 1000,
         "dueDate": "January 10",
-        "status": "Fully Paid"
+        "status": "Fully Paid",
+        "receiptNumber": "JAN-2026-005"
       },
       {
         "name": "Bonafacia Cesista",
         "amount": 1000,
         "dueDate": "January 10",
-        "status": "Unpaid"
+        "status": "Unpaid",
+        "receiptNumber": null
       },
       {
         "name": "Gemalyn Nebril",
         "amount": 1000,
         "dueDate": "January 15",
-        "status": "Unpaid"
+        "status": "Unpaid",
+        "receiptNumber": null
       },
       {
         "name": "Edito Resano",
         "amount": 1000,
         "dueDate": "January 15",
-        "status": "Unpaid"
+        "status": "Unpaid",
+        "receiptNumber": null
       },
       {
         "name": "Christian Paul Duran Montallana",
         "amount": 1000,
         "dueDate": "January 20",
-        "status": "Unpaid"
+        "status": "Unpaid",
+        "receiptNumber": null
       },
       {
         "name": "Edna Norombaba",
         "amount": 600,
         "dueDate": "January 20",
-        "status": "Unpaid"
+        "status": "Unpaid",
+        "receiptNumber": null
       },
       {
         "name": "Marie Vic Gupa",
         "amount": 1000,
         "dueDate": "January 20",
-        "status": "Unpaid"
+        "status": "Unpaid",
+        "receiptNumber": null
       },
       {
         "name": "Jovelyn Cañete",
         "amount": 1000,
         "dueDate": "January 20",
-        "status": "Unpaid"
+        "status": "Unpaid",
+        "receiptNumber": null
       },
       {
         "name": "Grace A. Mengote",
         "amount": 1000,
         "dueDate": "January 30",
-        "status": "Unpaid"
+        "status": "Unpaid",
+        "receiptNumber": null
       },
       {
         "name": "Marshel Lazarra",
         "amount": 1000,
         "dueDate": "January 30",
-        "status": "Unpaid"
+        "status": "Unpaid",
+        "receiptNumber": null
       },
       {
         "name": "Mercia Borja",
         "amount": 1000,
         "dueDate": "January 30",
-        "status": "Unpaid"
+        "status": "Unpaid",
+        "receiptNumber": null
       },
       {
         "name": "Vilma Lazarra",
         "amount": 1000,
         "dueDate": "January 30",
-        "status": "Unpaid"
+        "status": "Unpaid",
+        "receiptNumber": null
       },
       {
         "name": "Farven Alota",
         "amount": 1000,
         "dueDate": "January 30",
-        "status": "Unpaid"
+        "status": "Unpaid",
+        "receiptNumber": null
       }
     ],
     "February-2026": [],

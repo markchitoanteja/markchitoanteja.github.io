@@ -14,13 +14,11 @@
             padding: 40px 0;
         }
 
-        /* Wrapper NOT captured */
         .page-wrapper {
             display: flex;
             justify-content: center;
         }
 
-        /* Receipt (captured) */
         .receipt {
             width: 680px;
             background: #ffffff;
@@ -32,6 +30,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .company {
+            display: flex;
+            align-items: center;
+        }
+
+        .company img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-right: 15px;
         }
 
         .company h1 {
@@ -108,13 +118,18 @@
 </head>
 
 <body>
+
     <div class="page-wrapper">
         <div id="receipt" class="receipt">
+
             <!-- Header -->
             <div class="header">
                 <div class="company">
-                    <h1>Payment Receipt</h1>
-                    <p>Reliable Internet Services</p>
+                    <img src="logo.png" alt="Company Logo" style="border-radius: 50%;">
+                    <div>
+                        <h1>Kuya Mark Wi-Fi</h1>
+                        <p>Affordable ● Reliable ● Fast</p>
+                    </div>
                 </div>
 
                 <div class="meta">
@@ -156,6 +171,7 @@
                 This receipt confirms that payment has been recorded in our system.<br>
                 Please retain this document for reference purposes.
             </div>
+
         </div>
     </div>
 
@@ -184,11 +200,11 @@
         else if (status === 'Partially Paid') statusEl.classList.add('partial');
         else statusEl.classList.add('unpaid');
 
-        // Receipt number
+        /* ---------- RECEIPT NUMBER FROM DATABASE ---------- */
         document.getElementById('receiptNo').textContent =
-            'RCPT-' + Date.now().toString().slice(-6);
+            params.get('receiptNumber') || 'N/A';
 
-        // Issued date + time
+        /* ---------- ISSUED DATE & TIME ---------- */
         const now = new Date();
         document.getElementById('issuedDateTime').textContent =
             now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
@@ -199,7 +215,26 @@
                 scale: 2
             }).then(canvas => {
                 const link = document.createElement('a');
-                link.download = 'payment-receipt.png';
+
+                // Format current date and time as YYYYMMDD-HHMMSS
+                const now = new Date();
+                const pad = num => String(num).padStart(2, '0');
+                const dateTimeStr = now.getFullYear().toString() +
+                    pad(now.getMonth() + 1) +
+                    pad(now.getDate()) + '-' +
+                    pad(now.getHours()) +
+                    pad(now.getMinutes()) +
+                    pad(now.getSeconds());
+
+                // Get client name and sanitize it (remove spaces / special chars)
+                const clientName = (params.get('name') || 'client')
+                    .replace(/\s+/g, '_')
+                    .replace(/[^a-zA-Z0-9_-]/g, '');
+
+                // Build the filename
+                const filename = `${clientName}_${dateTimeStr}.png`;
+
+                link.download = filename;
                 link.href = canvas.toDataURL('image/png');
                 link.click();
             });

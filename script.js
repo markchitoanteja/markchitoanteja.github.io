@@ -284,3 +284,21 @@ $("#tableBody").on("click", ".receiptBtn", function () {
 
     window.open(url, "_blank");
 });
+
+/* ---------- DOWNLOAD DATABASE BUTTON ---------- */
+$('#downloadBtn').on('click', function (e) {
+    e.preventDefault(); // Prevent default link behavior
+    const url = 'https://raw.githubusercontent.com/markchitoanteja/markchitoanteja.github.io/main/internet-payments.json';
+
+    $.get(url, function (data) {
+        const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'internet-payments.json';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }).fail(function () {
+        alert('Failed to download file.');
+    });
+});

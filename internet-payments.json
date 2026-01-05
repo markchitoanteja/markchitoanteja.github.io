@@ -12,8 +12,8 @@
         "name": "Vilma Lazarra",
         "amount": 500,
         "dueDate": "December 30",
-        "status": "Fully Paid",
-        "receiptNumber": "DEC-2025-002"
+        "status": "Partially Paid",
+        "receiptNumber": null
       }
     ],
     "January-2026": [

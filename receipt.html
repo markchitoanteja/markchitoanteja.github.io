@@ -3,175 +3,209 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Internet Payment Receipt</title>
+    <title>Payment Receipt</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
     <style>
         body {
-            background: #f4f6f8;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            padding: 50px;
+            background: #f0f2f5;
+            font-family: "Segoe UI", Arial, sans-serif;
+            padding: 40px 0;
         }
 
-        .receipt-container {
-            max-width: 650px;
-            margin: auto;
-            background: white;
+        /* Wrapper NOT captured */
+        .page-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Receipt (captured) */
+        .receipt {
+            width: 680px;
+            background: #ffffff;
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-            border-top: 6px solid #0d6efd;
+            border: 1px solid #dee2e6;
         }
 
         .header {
-            text-align: center;
-            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .header img {
-            max-height: 80px;
-            margin-bottom: 10px;
-        }
-
-        .header h1 {
-            font-size: 1.9rem;
-            margin-bottom: 5px;
-            color: #0d6efd;
-            letter-spacing: 1px;
-        }
-
-        .header p {
+        .company h1 {
+            font-size: 1.6rem;
             margin: 0;
-            color: #555;
-            font-size: 0.95rem;
+            font-weight: 700;
+            color: #0d6efd;
         }
 
-        hr {
-            border-top: 1px solid #dee2e6;
-            margin: 20px 0;
-        }
-
-        .details-table {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .details-table td {
-            padding: 8px 10px;
-            font-size: 1rem;
-        }
-
-        .details-table .label {
-            font-weight: 600;
-            color: #333;
-            width: 40%;
-        }
-
-        .status-badge {
-            padding: 6px 14px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: inline-block;
-        }
-
-        .status-FullyPaid {
-            background-color: #198754;
-            color: #fff;
-        }
-
-        .status-PartiallyPaid {
-            background-color: #ffc107;
-            color: #212529;
-        }
-
-        .status-Unpaid {
-            background-color: #dc3545;
-            color: #fff;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.85rem;
+        .company p {
+            margin: 0;
+            font-size: 0.9rem;
             color: #6c757d;
         }
 
-        .footer a {
-            color: #0d6efd;
-            text-decoration: none;
+        .meta {
+            text-align: right;
+            font-size: 0.85rem;
+            color: #343a40;
         }
 
-        .footer a:hover {
-            text-decoration: underline;
+        hr {
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            font-size: 0.95rem;
+        }
+
+        td {
+            padding: 8px 4px;
+        }
+
+        td.label {
+            font-weight: 600;
+            width: 45%;
+        }
+
+        .status {
+            padding: 4px 14px;
+            border-radius: 14px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .paid {
+            background: #198754;
+            color: #ffffff;
+        }
+
+        .partial {
+            background: #ffc107;
+            color: #212529;
+        }
+
+        .unpaid {
+            background: #dc3545;
+            color: #ffffff;
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+
+        .actions {
+            margin-top: 25px;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
-    <div class="receipt-container">
-        <!-- Header -->
-        <div class="header">
-            <img src="logo.png" alt="ISP Logo" style="border-radius: 50%;">
-            <h1>Payment Receipt</h1>
-            <p>Reliable Internet Services</p>
-        </div>
+    <div class="page-wrapper">
+        <div id="receipt" class="receipt">
+            <!-- Header -->
+            <div class="header">
+                <div class="company">
+                    <h1>Payment Receipt</h1>
+                    <p>Reliable Internet Services</p>
+                </div>
 
-        <hr>
+                <div class="meta">
+                    <div><strong>Receipt No:</strong> <span id="receiptNo"></span></div>
+                    <div><strong>Issued:</strong> <span id="issuedDateTime"></span></div>
+                </div>
+            </div>
 
-        <!-- Client Details -->
-        <table class="details-table">
-            <tr>
-                <td class="label">Billing Month:</td>
-                <td id="billingMonth"></td>
-            </tr>
-            <tr>
-                <td class="label">Client Name:</td>
-                <td id="clientName"></td>
-            </tr>
-            <tr>
-                <td class="label">Amount:</td>
-                <td>₱<span id="amount"></span></td>
-            </tr>
-            <tr>
-                <td class="label">Due Date:</td>
-                <td id="dueDate"></td>
-            </tr>
-            <tr>
-                <td class="label">Payment Status:</td>
-                <td><span id="status" class="status-badge"></span></td>
-            </tr>
-        </table>
+            <hr>
 
-        <hr>
+            <!-- Details -->
+            <table>
+                <tr>
+                    <td class="label">Billing Month</td>
+                    <td id="billingMonth"></td>
+                </tr>
+                <tr>
+                    <td class="label">Client Name</td>
+                    <td id="clientName"></td>
+                </tr>
+                <tr>
+                    <td class="label">Amount</td>
+                    <td>₱<span id="amount"></span></td>
+                </tr>
+                <tr>
+                    <td class="label">Due Date</td>
+                    <td id="dueDate"></td>
+                </tr>
+                <tr>
+                    <td class="label">Payment Status</td>
+                    <td><span id="status" class="status"></span></td>
+                </tr>
+            </table>
 
-        <!-- Footer -->
-        <div class="footer">
-            Thank you for your payment!<br>
-            Visit us: <a href="https://www.kuyamarkwifi.com" target="_blank">www.kuyamarkwifi.com</a><br>
-            This receipt is valid for record purposes only.
+            <hr>
+
+            <!-- Footer -->
+            <div class="footer">
+                This receipt confirms that payment has been recorded in our system.<br>
+                Please retain this document for reference purposes.
+            </div>
         </div>
     </div>
 
+    <!-- Actions -->
+    <div class="actions">
+        <button class="btn btn-primary" onclick="downloadReceipt()">
+            Download Receipt (PNG)
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
     <script>
-        // Load data from URL parameters
         const params = new URLSearchParams(window.location.search);
+
         document.getElementById('billingMonth').textContent = params.get('month') || '';
         document.getElementById('clientName').textContent = params.get('name') || '';
         document.getElementById('amount').textContent = params.get('amount') || '';
         document.getElementById('dueDate').textContent = params.get('dueDate') || '';
 
-        const statusElem = document.getElementById('status');
-        const statusValue = params.get('status') || '';
-        statusElem.textContent = statusValue;
+        const statusEl = document.getElementById('status');
+        const status = params.get('status') || '';
+        statusEl.textContent = status;
 
-        if (statusValue === "Fully Paid") statusElem.classList.add('status-FullyPaid');
-        else if (statusValue === "Partially Paid") statusElem.classList.add('status-PartiallyPaid');
-        else if (statusValue === "Unpaid") statusElem.classList.add('status-Unpaid');
+        if (status === 'Fully Paid') statusEl.classList.add('paid');
+        else if (status === 'Partially Paid') statusEl.classList.add('partial');
+        else statusEl.classList.add('unpaid');
+
+        // Receipt number
+        document.getElementById('receiptNo').textContent =
+            'RCPT-' + Date.now().toString().slice(-6);
+
+        // Issued date + time
+        const now = new Date();
+        document.getElementById('issuedDateTime').textContent =
+            now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
+
+        function downloadReceipt() {
+            html2canvas(document.getElementById('receipt'), {
+                backgroundColor: '#ffffff',
+                scale: 2
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'payment-receipt.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            });
+        }
     </script>
+
 </body>
 
 </html>

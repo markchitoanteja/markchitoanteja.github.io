@@ -10,7 +10,7 @@
       {
         "name": "Vilma Lazarra",
         "amount": 500,
-        "dueDate": "Dacember 30",
+        "dueDate": "December 30",
         "status": "Partially Paid"
       }
     ],
@@ -37,7 +37,7 @@
         "name": "Normita Anteja",
         "amount": 1000,
         "dueDate": "January 5",
-        "status": "Unpaid"
+        "status": "Fully Paid"
       },
       {
         "name": "Rina Samantila",
@@ -136,6 +136,9 @@
         "status": "Unpaid"
       }
     ],
-    "February-2026": []
+    "February-2026": [],
+    "March-2026": [],
+    "April-2026": [],
+    "May-2026": []
   }
 }

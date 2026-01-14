@@ -10,10 +10,10 @@
       },
       {
         "name": "Vilma Lazarra",
-        "amount": 500,
+        "amount": 1000,
         "dueDate": "December 30",
-        "status": "Partially Paid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "DEC-2025-002"
       }
     ],
     "January-2026": [
@@ -21,15 +21,15 @@
         "name": "Blessie Comeo",
         "amount": 1000,
         "dueDate": "January 5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JAN-2026-006"
       },
       {
         "name": "Emma Renon",
         "amount": 1000,
         "dueDate": "January 5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JAN-2026-007"
       },
       {
         "name": "Josephine Macawile Taan",
@@ -63,8 +63,8 @@
         "name": "Rona Lazarra",
         "amount": 1000,
         "dueDate": "January 5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JAN-2026-008"
       },
       {
         "name": "Annabel Macawile Mandariza",
@@ -121,6 +121,13 @@
         "dueDate": "January 20",
         "status": "Unpaid",
         "receiptNumber": null
+      },
+      {
+        "name": "Jovelyn Cañete 2",
+        "amount": 1000,
+        "dueDate": "January 20",
+        "status": "Fully Paid",
+        "receiptNumber": "JAN-2026-009"
       },
       {
         "name": "Grace A. Mengote",

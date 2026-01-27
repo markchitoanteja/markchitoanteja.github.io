@@ -3,6 +3,11 @@ let db = { months: {} };
 let selectedMonth = null;
 const modal = new bootstrap.Modal("#recordModal");
 
+function isMobile() {
+    const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+    return mobileRegex.test(navigator.userAgent);
+}
+
 /* ---------- DATABASE ---------- */
 $("#openDbBtn").on("click", async () => {
     try {
@@ -207,6 +212,7 @@ function renderTable() {
 
     let fully = 0, partial = 0, unpaid = 0;
 
+    // Populate table
     db.months[selectedMonth].forEach((c, i) => {
         let displayAmount = c.amount;
         if (c.status === "Partially Paid") displayAmount = c.amount;
@@ -215,19 +221,28 @@ function renderTable() {
         else if (c.status === "Partially Paid") partial += c.amount;
         else unpaid += c.amount;
 
+        // Check if mobile to show icon-only buttons
+        const iconOnly = isMobile();
+
         tbody.append(`
-            <tr>
-                <td>${c.name}</td>
-                <td class="text-center">₱${displayAmount}</td>
-                <td class="text-center">${c.dueDate}</td>
-                <td class="text-center ${c.status === 'Fully Paid' ? 'text-success' : c.status === 'Partially Paid' ? 'text-warning' : 'text-danger'} fw-bold">${c.status}</td>
-                <td class="text-center">
-                    <button class="btn btn-sm btn-info receiptBtn" data-i="${i}"><i class="fas fa-receipt"></i> Receipt</button>
-                    <button class="btn btn-sm btn-warning editBtn" data-i="${i}"><i class="fas fa-edit"></i> Edit</button>
-                    <button class="btn btn-sm btn-danger deleteBtn" data-i="${i}"><i class="fas fa-trash"></i> Delete</button>
-                </td>
-            </tr>
-        `);
+        <tr>
+            <td>${c.name}</td>
+            <td class="text-center">₱${displayAmount}</td>
+            <td class="text-center">${c.dueDate}</td>
+            <td class="text-center ${c.status === 'Fully Paid' ? 'text-success' : c.status === 'Partially Paid' ? 'text-warning' : 'text-danger'} fw-bold">${c.status}</td>
+            <td class="text-center">
+                <button class="btn btn-sm btn-info receiptBtn" data-i="${i}">
+                    <i class="fas fa-receipt"></i>${iconOnly ? '' : ' Receipt'}
+                </button>
+                <button class="btn btn-sm btn-warning editBtn" data-i="${i}">
+                    <i class="fas fa-edit"></i>${iconOnly ? '' : ' Edit'}
+                </button>
+                <button class="btn btn-sm btn-danger deleteBtn" data-i="${i}">
+                    <i class="fas fa-trash"></i>${iconOnly ? '' : ' Delete'}
+                </button>
+            </td>
+        </tr>
+    `);
     });
 
     $("#paidTotal").text(fully);

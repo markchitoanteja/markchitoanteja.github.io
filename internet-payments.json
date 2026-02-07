@@ -1,109 +1,109 @@
 {
-  "activeMonth": "February-2026",
+  "activeMonth": "January-2026",
   "months": {
     "January-2026": [
       {
         "name": "Blessie Comeo",
         "amount": 1000,
-        "dueDate": "January 5",
+        "dueDate": "5",
         "status": "Fully Paid",
         "receiptNumber": "JAN-2026-006"
       },
       {
         "name": "Emma Renon",
         "amount": 1000,
-        "dueDate": "January 5",
+        "dueDate": "5",
         "status": "Fully Paid",
         "receiptNumber": "JAN-2026-007"
       },
       {
         "name": "Normita Anteja",
         "amount": 1000,
-        "dueDate": "January 5",
+        "dueDate": "5",
         "status": "Fully Paid",
         "receiptNumber": "JAN-2026-002"
       },
       {
         "name": "Rina Samantila",
         "amount": 1000,
-        "dueDate": "January 5",
+        "dueDate": "5",
         "status": "Fully Paid",
         "receiptNumber": "JAN-2026-003"
       },
       {
         "name": "Rona Lazarra",
         "amount": 1000,
-        "dueDate": "January 5",
+        "dueDate": "5",
         "status": "Fully Paid",
         "receiptNumber": "JAN-2026-008"
       },
       {
         "name": "Josephine Macawile Taan",
         "amount": 1500,
-        "dueDate": "January 5",
+        "dueDate": "5",
         "status": "Fully Paid",
         "receiptNumber": "JAN-2026-001"
       },
       {
         "name": "Sharon Diu",
         "amount": 1500,
-        "dueDate": "January 5",
+        "dueDate": "5",
         "status": "Fully Paid",
         "receiptNumber": "JAN-2026-004"
       },
       {
         "name": "Bonafacia Cesista",
         "amount": 1000,
-        "dueDate": "January 10",
+        "dueDate": "10",
         "status": "Fully Paid",
         "receiptNumber": "JAN-2026-013"
       },
       {
         "name": "Annabel Macawile Mandariza",
         "amount": 1000,
-        "dueDate": "January 10",
+        "dueDate": "10",
         "status": "Fully Paid",
         "receiptNumber": "JAN-2026-005"
       },
       {
         "name": "Edito Resano",
         "amount": 1000,
-        "dueDate": "January 15",
+        "dueDate": "15",
         "status": "Fully Paid",
         "receiptNumber": "JAN-2026-011"
       },
       {
         "name": "Gemalyn Nebril",
         "amount": 1000,
-        "dueDate": "January 15",
+        "dueDate": "15",
         "status": "Fully Paid",
         "receiptNumber": "JAN-2026-010"
       },
       {
         "name": "Christian Paul Duran Montallana",
         "amount": 1000,
-        "dueDate": "January 20",
+        "dueDate": "20",
         "status": "Fully Paid",
         "receiptNumber": "JAN-2026-014"
       },
       {
         "name": "Edna Norombaba",
         "amount": 600,
-        "dueDate": "January 20",
+        "dueDate": "20",
         "status": "Fully Paid",
         "receiptNumber": "JAN-2026-016"
       },
       {
         "name": "Jovelyn Cañete",
         "amount": 1000,
-        "dueDate": "January 20",
+        "dueDate": "20",
         "status": "Fully Paid",
         "receiptNumber": "JAN-2026-015"
       },
       {
         "name": "Jovelyn Cañete 2",
         "amount": 1000,
-        "dueDate": "January 20",
+        "dueDate": "20",
         "status": "Fully Paid",
         "receiptNumber": "JAN-2026-009"
       },
@@ -139,8 +139,8 @@
         "name": "Mercia Borja",
         "amount": 1000,
         "dueDate": "January 30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JAN-2026-020"
       },
       {
         "name": "Vilma Lazarra",
@@ -190,15 +190,15 @@
         "name": "Josephine Macawile Taan",
         "amount": 1500,
         "dueDate": "January 5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "FEB-2026-003"
       },
       {
         "name": "Sharon Diu",
         "amount": 1500,
         "dueDate": "January 5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "FEB-2026-004"
       },
       {
         "name": "Bonafacia Cesista",

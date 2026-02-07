@@ -1,0 +1,92 @@
+:root {
+    --brand-color: #0056d2;
+    --brand-dark: #0041a8;
+    --badge-radius: 0.4rem;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.company-logo {
+    height: 48px;
+    width: auto;
+}
+
+.brand-bg {
+    background-color: var(--brand-color) !important;
+    color: #fff;
+}
+
+.brand-text {
+    color: var(--brand-color);
+}
+
+.status-badge {
+    padding: 0.35em 0.7em;
+    font-size: 0.85rem;
+    border-radius: var(--badge-radius);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 86, 210, 0.05);
+}
+
+footer {
+    font-size: 0.85rem;
+    padding-top: 1rem;
+}
+
+.card-header,
+.card-body {
+    padding: 1rem 1.25rem;
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+}
+
+.btn-outline-primary {
+    border-color: var(--brand-color);
+    color: var(--brand-color);
+    transition: all 0.2s;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--brand-color);
+    color: #fff;
+}
+
+/* Add Client & Search styling */
+#searchInput {
+    border-radius: .6rem 0 0 .6rem;
+}
+
+#clearSearch {
+    border-radius: 0 .6rem .6rem 0;
+}
+
+/* Summary Modal Metric Cards */
+#summaryModal .metric {
+    padding: 1rem;
+    border-radius: .6rem;
+    background: #f8f9fa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+#summaryModal .metric .meta {
+    font-size: .85rem;
+    font-weight: 500;
+    color: #555;
+}
+
+#summaryModal .metric h4 {
+    font-weight: 700;
+    margin-top: .25rem;
+    font-size: 1.5rem;
+}

@@ -177,6 +177,24 @@ $("#status").on("change", function () {
     }
 });
 
+function preventModalClose() {
+    $("#saveBtn").prop("disabled", true);
+    $("#saveBtn").text("Saving...");
+
+    $("#recordModal").on("hide.bs.modal", (e) => {
+        if ($("#saveBtn").prop("disabled")) {
+            e.preventDefault();
+        }
+    });
+}
+
+function allowModalClose() {
+    $("#saveBtn").prop("disabled", false);
+    $("#saveBtn").html('<i class="fas fa-save"></i> Save');
+
+    $("#recordModal").off("hide.bs.modal");
+}
+
 $("#saveBtn").on("click", async () => {
     if (!selectedMonth) return Swal.fire("Error", "No month selected", "error");
 
@@ -185,7 +203,12 @@ $("#saveBtn").on("click", async () => {
     let totalAmount = Number($("#amount").val());
     let paidAmount = 0;
 
+    // Prevent modal from closing while saving
+    preventModalClose();
+
     if (status === "Partially Paid") {
+        allowModalClose(); // Allow closing for validation errors
+
         paidAmount = Number($("#partialPaidAmount").val()) || 0;
         if (paidAmount >= totalAmount) return Swal.fire("Invalid Amount", "Partial payment must be less than total amount.", "error");
         totalAmount = totalAmount - paidAmount;
@@ -199,7 +222,11 @@ $("#saveBtn").on("click", async () => {
         receiptNumber: null
     };
 
-    if (!record.name || !record.amount || !record.dueDate) return Swal.fire("Invalid Input", "All fields are required", "error");
+    if (!record.name || !record.amount || !record.dueDate) {
+        allowModalClose(); // Allow closing for validation errors
+
+        return Swal.fire("Invalid Input", "All fields are required", "error");
+    }
 
     if (idx !== "") {
         const oldRecord = db.months[selectedMonth][idx];
@@ -217,6 +244,9 @@ $("#saveBtn").on("click", async () => {
     currentPage = 1;
     await saveDatabase();
     renderTable();
+
+    allowModalClose(); // Re-enable modal closing
+
     modal.hide();
     Swal.fire("Saved", "Record updated successfully", "success");
 });

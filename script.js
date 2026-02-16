@@ -402,8 +402,28 @@ $("#tableBody").on("click", ".deleteBtn", async function () {
 $("#tableBody").on("click", ".receiptBtn", function () {
     const idx = $(this).data("i");
     const client = db.months[selectedMonth][idx];
-    if (client.status !== "Fully Paid" || !client.receiptNumber) return Swal.fire("Receipt Not Available", "Receipt can only be generated for fully paid clients.", "warning");
-    const url = `receipt.html?month=${encodeURIComponent(selectedMonth)}&name=${encodeURIComponent(client.name)}&amount=${encodeURIComponent(client.amount)}.00&dueDate=${encodeURIComponent(client.dueDate)}&status=${encodeURIComponent(client.status)}&receiptNumber=${encodeURIComponent(client.receiptNumber)}`;
+
+    if (client.status !== "Fully Paid" || !client.receiptNumber) {
+        return Swal.fire(
+            "Receipt Not Available",
+            "Receipt can only be generated for fully paid clients.",
+            "warning"
+        );
+    }
+
+    // selectedMonth pattern: "February-2026"
+    const [billingMonthName, billingYear] = String(selectedMonth).split("-");
+
+    // client.dueDate assumed to contain the day (e.g. "15" or "15th" or "2026-02-15")
+    // We'll extract a numeric day if possible; fallback to the raw dueDate.
+    const dayMatch = String(client.dueDate).match(/\d{1,2}/);
+    const dueDay = dayMatch ? dayMatch[0] : String(client.dueDate);
+
+    // "February 15, 2026"
+    const prettyDueDate = `${billingMonthName} ${dueDay}, ${billingYear}`;
+
+    const url = `receipt.html?month=${encodeURIComponent(selectedMonth)}&name=${encodeURIComponent(client.name)}&amount=${encodeURIComponent(client.amount)}.00&dueDate=${encodeURIComponent(prettyDueDate)}&status=${encodeURIComponent(client.status)}&receiptNumber=${encodeURIComponent(client.receiptNumber)}`;
+
     window.open(url, "_blank");
 });
 

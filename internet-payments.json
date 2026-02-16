@@ -176,8 +176,8 @@
         "name": "Rina Samantila",
         "amount": 1000,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "FEB-2026-009"
       },
       {
         "name": "Josephine Macawile Taan",
@@ -218,15 +218,15 @@
         "name": "Edito Resano",
         "amount": 1000,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "FEB-2026-010"
       },
       {
         "name": "Gemalyn Nebril",
         "amount": 1000,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "FEB-2026-013"
       },
       {
         "name": "Christian Paul Duran Montallana",
@@ -246,15 +246,15 @@
         "name": "Jovelyn Cañete",
         "amount": 1000,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "FEB-2026-011"
       },
       {
         "name": "Jovelyn Cañete 2",
         "amount": 1000,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "FEB-2026-012"
       },
       {
         "name": "Marie Vic Gupa",

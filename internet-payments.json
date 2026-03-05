@@ -308,6 +308,13 @@
     ],
     "March-2026": [
       {
+        "name": "Bebe Alota",
+        "amount": 1000,
+        "dueDate": "5",
+        "status": "Fully Paid",
+        "receiptNumber": "MAR-2026-003"
+      },
+      {
         "name": "Blessie Comeo",
         "amount": 1000,
         "dueDate": "5",
@@ -318,8 +325,15 @@
         "name": "Emma Renon",
         "amount": 1000,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "MAR-2026-001"
+      },
+      {
+        "name": "Freddie Oros",
+        "amount": 1000,
+        "dueDate": "5",
+        "status": "Fully Paid",
+        "receiptNumber": "MAR-2026-002"
       },
       {
         "name": "Normita Anteja",

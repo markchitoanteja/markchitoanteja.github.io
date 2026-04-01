@@ -460,10 +460,11 @@ function updateTotals() {
 /* ---------- DOWNLOAD DATABASE ---------- */
 $('#downloadBtn').on('click', function (e) {
     e.preventDefault();
-    const blob = new Blob([JSON.stringify(db, null, 2)], { type: 'application/json' });
+
     const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'internet-payments.json';
+    link.href = "https://onedrive.live.com/personal/b90c54cd853fc20f/_layouts/15/download.aspx?SourceUrl=%2Fpersonal%2Fb90c54cd853fc20f%2FDocuments%2FDocuments%2Fmarkchitoanteja%2Egithub%2Eio%2Finternet%2Dpayments%2Ejson";
+    link.download = "internet-payments.json";
+
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

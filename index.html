@@ -6,16 +6,289 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kuya Mark Wi-Fi</title>
 
-    <script>
-        window.location.replace("page-1.html");
-    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <noscript>
-        <meta http-equiv="refresh" content="0; url=page-1.html">
-    </noscript>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: #f4f6f9;
+        }
+
+        /* BRAND */
+        .brand-header {
+            background: linear-gradient(135deg, #0d6efd, #0a58ca);
+            color: white;
+            border-radius: 14px;
+        }
+
+        /* KPI */
+        .kpi {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        /* UNPAID */
+        .unpaid-card {
+            border-left: 4px solid #dc3545;
+            transition: 0.15s ease;
+        }
+
+        .unpaid-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        /* TABLE */
+        .table {
+            font-size: 0.9rem;
+        }
+    </style>
 
 </head>
 
-<body></body>
+<body>
+
+    <div class="container-fluid py-3">
+
+        <!-- BRAND -->
+        <div class="brand-header p-3 mb-3 d-flex align-items-center shadow-sm">
+
+            <img src="logo.png" width="50" class="me-3 rounded">
+
+            <div>
+                <div class="fw-bold">Kuya Mark Wi-Fi</div>
+                <small>Internet Payment Monitoring System</small>
+            </div>
+
+        </div>
+
+        <!-- FILTERS -->
+        <div class="card border-0 shadow-sm mb-3">
+            <div class="card-body row g-2">
+
+                <div class="col-12 col-md-4">
+                    <label class="form-label">Month</label>
+                    <select id="monthSelect" class="form-select"></select>
+                </div>
+
+                <div class="col-12 col-md-5">
+                    <label class="form-label">Search</label>
+                    <input id="searchInput" class="form-control" placeholder="Client or receipt">
+                </div>
+
+                <div class="col-12 col-md-3">
+                    <label class="form-label">Rows</label>
+                    <select id="pageSize" class="form-select">
+                        <option>5</option>
+                        <option selected>10</option>
+                        <option>20</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- KPI -->
+        <div class="row g-2 mb-3">
+
+            <div class="col-4">
+                <div class="card p-2 text-center">
+                    <div class="text-muted small">Paid</div>
+                    <div id="kpiPaid" class="kpi text-success">0</div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card p-2 text-center">
+                    <div class="text-muted small">Unpaid</div>
+                    <div id="kpiUnpaid" class="kpi text-danger">0</div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card p-2 text-center">
+                    <div class="text-muted small">Partial</div>
+                    <div id="kpiPartial" class="kpi text-warning">0</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TABLE -->
+        <div class="card border-0 shadow-sm mb-3">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Client</th>
+                            <th>Amount</th>
+                            <th>Due</th>
+                            <th>Status</th>
+                            <th>Receipt</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tableBody"></tbody>
+
+                </table>
+            </div>
+        </div>
+
+        <!-- PAGINATION -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+
+            <button id="prevBtn" class="btn btn-outline-secondary btn-sm">Prev</button>
+
+            <div id="pageInfo" class="small text-muted"></div>
+
+            <button id="nextBtn" class="btn btn-outline-primary btn-sm">Next</button>
+
+        </div>
+
+        <!-- UNPAID -->
+        <div class="card border-0 shadow-sm">
+            <div class="card-header text-danger fw-bold">Outstanding Accounts</div>
+            <div class="card-body" id="unpaidList"></div>
+        </div>
+
+    </div>
+
+    <script src="data.js"></script>
+
+    <script>
+        const data = window.paymentData;
+
+        let currentMonth = data.activeMonth;
+        let currentPage = 1;
+
+        // elements
+        const monthSelect = document.getElementById("monthSelect");
+        const tableBody = document.getElementById("tableBody");
+        const unpaidList = document.getElementById("unpaidList");
+
+        const kpiPaid = document.getElementById("kpiPaid");
+        const kpiUnpaid = document.getElementById("kpiUnpaid");
+        const kpiPartial = document.getElementById("kpiPartial");
+
+        const pageInfo = document.getElementById("pageInfo");
+
+        // ---------------- init months ----------------
+        Object.keys(data.months).forEach(m => {
+            const opt = document.createElement("option");
+            opt.value = m;
+            opt.textContent = m;
+            monthSelect.appendChild(opt);
+        });
+
+        monthSelect.value = currentMonth;
+
+        // ---------------- helpers ----------------
+        function formatPeso(v) {
+            return "₱" + Number(v).toLocaleString();
+        }
+
+        // ---------------- core data ----------------
+        function getRecords() {
+            return data.months[currentMonth] || [];
+        }
+
+        function getFiltered() {
+            const q = document.getElementById("searchInput").value.toLowerCase();
+            return getRecords().filter(r =>
+                r.name.toLowerCase().includes(q) ||
+                (r.receiptNumber || "").toLowerCase().includes(q)
+            );
+        }
+
+        // ---------------- render ----------------
+        function render() {
+
+            const pageSize = parseInt(document.getElementById("pageSize").value);
+            const records = getFiltered();
+
+            const totalPages = Math.max(1, Math.ceil(records.length / pageSize));
+
+            if (currentPage > totalPages) currentPage = 1;
+
+            const start = (currentPage - 1) * pageSize;
+            const page = records.slice(start, start + pageSize);
+
+            // KPI
+            let paid = 0, unpaid = 0, partial = 0;
+
+            records.forEach(r => {
+                if (r.status === "Fully Paid") paid++;
+                else if (r.status === "Unpaid") unpaid++;
+                else partial++;
+            });
+
+            kpiPaid.textContent = paid;
+            kpiUnpaid.textContent = unpaid;
+            kpiPartial.textContent = partial;
+
+            // table
+            tableBody.innerHTML = page.map(r => `
+<tr>
+<td>${r.name}</td>
+<td>${formatPeso(r.amount)}</td>
+<td>${r.dueDate}</td>
+<td>${r.status}</td>
+<td>${r.receiptNumber || "-"}</td>
+</tr>
+`).join("");
+
+            // unpaid
+            unpaidList.innerHTML = getRecords()
+                .filter(r => r.status === "Unpaid")
+                .map(r => `
+<div class="card unpaid-card mb-2">
+<div class="card-body py-2">
+<div class="fw-semibold">${r.name}</div>
+<div class="small text-muted">Due ${r.dueDate} • ${currentMonth}</div>
+<div class="text-danger fw-bold">${formatPeso(r.amount)}</div>
+</div>
+</div>
+`).join("") || "<div class='text-muted'>No unpaid accounts</div>";
+
+            // pagination
+            pageInfo.textContent = `Page ${currentPage} / ${totalPages}`;
+
+            document.getElementById("prevBtn").disabled = currentPage <= 1;
+            document.getElementById("nextBtn").disabled = currentPage >= totalPages;
+        }
+
+        // ---------------- events ----------------
+        monthSelect.addEventListener("change", e => {
+            currentMonth = e.target.value;
+            currentPage = 1;
+            render();
+        });
+
+        document.getElementById("searchInput").addEventListener("input", () => {
+            currentPage = 1;
+            render();
+        });
+
+        document.getElementById("pageSize").addEventListener("change", () => {
+            currentPage = 1;
+            render();
+        });
+
+        document.getElementById("prevBtn").onclick = () => {
+            currentPage--;
+            render();
+        };
+
+        document.getElementById("nextBtn").onclick = () => {
+            currentPage++;
+            render();
+        };
+
+        // INIT
+        render();
+    </script>
+
+</body>
 
 </html>

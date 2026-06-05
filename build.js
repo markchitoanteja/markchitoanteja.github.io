@@ -6,7 +6,7 @@ const data = JSON.parse(
 
 const PAGE_SIZE = 10;
 
-// -------------------- helpers --------------------
+// ---------------- helpers ----------------
 function formatPeso(amount) {
     return "₱" + Number(amount).toLocaleString();
 }
@@ -18,18 +18,18 @@ function badge(status) {
     return `<span class="badge bg-secondary">${status}</span>`;
 }
 
-// -------------------- data --------------------
+// ---------------- data ----------------
 const months = Object.keys(data.months);
 const activeMonth = data.activeMonth || months[0];
 const records = data.months[activeMonth] || [];
 
-// -------------------- pagination --------------------
+// ---------------- pagination ----------------
 const pages = [];
 for (let i = 0; i < records.length; i += PAGE_SIZE) {
     pages.push(records.slice(i, i + PAGE_SIZE));
 }
 
-// -------------------- unpaid UI --------------------
+// ---------------- unpaid ----------------
 function renderUnpaid(rows, monthName) {
     return rows
         .filter(r => r.status === "Unpaid")
@@ -37,12 +37,12 @@ function renderUnpaid(rows, monthName) {
 <div class="card border-0 shadow-sm mb-2 unpaid-card">
     <div class="card-body py-2 px-3">
 
-        <div class="d-flex justify-content-between align-items-start">
+        <div class="d-flex justify-content-between">
 
             <div>
                 <div class="fw-semibold">${r.name}</div>
                 <div class="text-muted small">
-                    Due Day: ${r.dueDate} • Month: ${monthName}
+                    Due ${r.dueDate} • ${monthName}
                 </div>
             </div>
 
@@ -62,7 +62,7 @@ function renderUnpaid(rows, monthName) {
 `).join("") || `<div class="text-muted small">No outstanding accounts.</div>`;
 }
 
-// -------------------- table --------------------
+// ---------------- table ----------------
 function renderTable(rows) {
     return rows.map(r => `
 <tr>
@@ -75,7 +75,7 @@ function renderTable(rows) {
 `).join("");
 }
 
-// -------------------- build page --------------------
+// ---------------- page builder ----------------
 function buildPage(index) {
 
     const pageRecords = pages[index] || [];
@@ -102,21 +102,45 @@ function buildPage(index) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${activeMonth} - Page ${index + 1}</title>
+<title>Kuya Mark Wi-Fi - ${activeMonth}</title>
 
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-body { font-family: Segoe UI; background:#f8f9fa; }
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #f4f6f9;
+}
 
-.card { border-radius: 14px; }
+/* BRAND HEADER */
+.brand-header {
+    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+    color: white;
+    border-radius: 14px;
+}
 
+.brand-title {
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.brand-sub {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* CARDS */
+.card {
+    border-radius: 14px;
+}
+
+/* KPI */
 .kpi {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 700;
 }
 
+/* UNPAID */
 .unpaid-card {
     border-left: 4px solid #dc3545;
     transition: 0.15s ease;
@@ -127,18 +151,44 @@ body { font-family: Segoe UI; background:#f8f9fa; }
     box-shadow: 0 6px 14px rgba(0,0,0,0.08);
 }
 
+/* TABLE */
 .table {
     font-size: 0.9rem;
 }
+
+/* FOOTER BRAND */
+.footer-brand {
+    font-size: 0.8rem;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 20px;
+}
 </style>
+
 </head>
 
 <body>
 
 <div class="container-fluid py-3">
 
-<!-- HEADER -->
-<div class="card shadow-sm border-0 mb-3">
+<!-- BRAND HEADER -->
+<div class="brand-header p-3 mb-3 shadow-sm">
+
+    <div class="d-flex align-items-center">
+
+        <img src="logo.png" width="50" height="50" class="me-3 rounded">
+
+        <div>
+            <div class="brand-title">Kuya Mark Wi-Fi</div>
+            <div class="brand-sub">Internet Payment Monitoring System</div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MONTH HEADER -->
+<div class="card border-0 shadow-sm mb-3">
 <div class="card-body">
 <h5 class="mb-0">${activeMonth}</h5>
 <small class="text-muted">Page ${index + 1} of ${pages.length}</small>
@@ -147,6 +197,7 @@ body { font-family: Segoe UI; background:#f8f9fa; }
 
 <!-- KPI -->
 <div class="row g-2 mb-3">
+
 <div class="col-4">
 <div class="card p-2 text-center">
 <div class="text-muted small">Paid</div>
@@ -167,10 +218,12 @@ body { font-family: Segoe UI; background:#f8f9fa; }
 <div class="kpi text-warning">${partial}</div>
 </div>
 </div>
+
 </div>
 
 <!-- TABLE -->
 <div class="card border-0 shadow-sm mb-3">
+
 <div class="table-responsive">
 <table class="table table-hover mb-0">
 
@@ -190,6 +243,7 @@ ${tableRows}
 
 </table>
 </div>
+
 </div>
 
 <!-- PAGINATION -->
@@ -216,6 +270,11 @@ ${unpaidList}
 </div>
 </div>
 
+<!-- FOOTER BRAND -->
+<div class="footer-brand">
+© ${new Date().getFullYear()} Kuya Mark Wi-Fi • All rights reserved
+</div>
+
 </div>
 
 </body>
@@ -223,9 +282,9 @@ ${unpaidList}
 `;
 }
 
-// -------------------- generate pages --------------------
+// ---------------- generate pages ----------------
 for (let i = 0; i < pages.length; i++) {
     fs.writeFileSync(`page-${i + 1}.html`, buildPage(i));
 }
 
-console.log(`✓ Generated ${pages.length} pages (10 per page)`);
+console.log(`✓ Kuya Mark Wi-Fi dashboard generated (${pages.length} pages)`);

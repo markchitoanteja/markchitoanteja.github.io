@@ -4,289 +4,728 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuya Mark Wi-Fi</title>
 
+    <title>Kuya Mark Wi-Fi | Internet & Piso Wi-Fi Installation Services</title>
+    <meta name="description" content="Professional Internet and Piso Wi-Fi Installation Services by Kuya Mark Wi-Fi">
+
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
     <style>
+        :root {
+            --primary: #0d6efd;
+            --secondary: #00c6ff;
+            --dark: #081120;
+            --light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: "Segoe UI", sans-serif;
-            background: #f4f6f9;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: #f8fafc;
+            color: #1e293b;
         }
 
-        /* BRAND */
-        .brand-header {
-            background: linear-gradient(135deg, #0d6efd, #0a58ca);
+        /* NAVBAR */
+
+        .navbar {
+            padding: 15px 0;
+            transition: .4s;
+            background: rgba(255, 255, 255, .85);
+            backdrop-filter: blur(15px);
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+        }
+
+        .navbar-brand img {
+            height: 48px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #334155 !important;
+            margin-left: 15px;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at top right, #00c6ff 0%, transparent 35%),
+                radial-gradient(circle at bottom left, #0d6efd 0%, transparent 45%),
+                linear-gradient(135deg, #081120, #0f2747);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("https://www.transparenttextures.com/patterns/cubes.png");
+            opacity: .08;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-logo {
+            width: 180px;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 10px 25px rgba(0, 0, 0, .3));
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
             color: white;
-            border-radius: 14px;
         }
 
-        /* KPI */
-        .kpi {
-            font-size: 1.2rem;
-            font-weight: 700;
+        .gradient-text {
+            background: linear-gradient(90deg, #00c6ff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* UNPAID */
-        .unpaid-card {
-            border-left: 4px solid #dc3545;
-            transition: 0.15s ease;
+        .hero p {
+            color: #dbeafe;
+            font-size: 1.15rem;
+            max-width: 750px;
+            margin: auto;
         }
 
-        .unpaid-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+        .btn-brand {
+            background: linear-gradient(135deg, #00c6ff, #0d6efd);
+            border: none;
+            color: white;
+            border-radius: 50px;
+            padding: 14px 35px;
+            font-weight: 600;
+            transition: .3s;
         }
 
-        /* TABLE */
-        .table {
-            font-size: 0.9rem;
+        .btn-brand:hover {
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        /* STATS */
+
+        .stats {
+            margin-top: -70px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 25px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+        }
+
+        .stat-card h2 {
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            color: #64748b;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* CARDS */
+
+        .service-card,
+        .feature-card {
+            background: white;
+            border: none;
+            border-radius: 25px;
+            padding: 40px;
+            height: 100%;
+            transition: .4s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+        }
+
+        .service-card:hover,
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #00c6ff, #0d6efd);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            background: white;
+            border-radius: 30px;
+            padding: 60px 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+        }
+
+        .contact-item {
+            padding: 25px;
+        }
+
+        .contact-item i {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .contact-item a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* CTA */
+
+        .cta {
+            background:
+                linear-gradient(135deg,
+                    #00c6ff,
+                    #0d6efd);
+            color: white;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #081120;
+            color: white;
+        }
+
+        footer a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+
+        /* FLOATING FACEBOOK */
+
+        .floating-fb {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #1877f2;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            z-index: 999;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+        }
+
+        /* ANIMATION */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: .8s;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media(max-width:768px) {
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-logo {
+                width: 140px;
+            }
+
+            .stats {
+                margin-top: 0;
+                padding-top: 50px;
+            }
         }
     </style>
-
 </head>
 
 <body>
 
-    <div class="container-fluid py-3">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
 
-        <!-- BRAND -->
-        <div class="brand-header p-3 mb-3 d-flex align-items-center shadow-sm">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logo.png" alt="Kuya Mark Wi-Fi" class="me-2">
+                <strong>Kuya Mark Wi-Fi</strong>
+            </a>
 
-            <img src="logo.png" width="50" class="me-3 rounded">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <div>
-                <div class="fw-bold">Kuya Mark Wi-Fi</div>
-                <small>Internet Payment Monitoring System</small>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="container text-center hero-content">
+
+            <img src="logo.png" class="hero-logo" alt="Logo">
+
+            <h1>
+                Kuya Mark
+                <span class="gradient-text">Wi-Fi</span>
+            </h1>
+
+            <p class="mt-4 mb-5">
+                Professional Internet & Piso Wi-Fi Installation Services.
+                Delivering reliable networking solutions for homes, businesses,
+                schools, stores, and communities.
+            </p>
+
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+
+                <!-- Primary Button -->
+                <a href="#services" class="btn btn-outline-primary rounded-pill px-4 py-3 fw-semibold">
+                    <i class="bi bi-grid-3x3-gap-fill me-2"></i>
+                    Explore Services
+                </a>
+
+                <!-- Secondary Button -->
+                <a href="#contact" class="btn btn-outline-light rounded-pill px-4 py-3 fw-semibold">
+                    <i class="bi bi-telephone-fill me-2"></i>
+                    Contact Us
+                </a>
+
             </div>
 
         </div>
 
-        <!-- FILTERS -->
-        <div class="card border-0 shadow-sm mb-3">
-            <div class="card-body row g-2">
+    </section>
 
-                <div class="col-12 col-md-4">
-                    <label class="form-label">Month</label>
-                    <select id="monthSelect" class="form-select"></select>
-                </div>
+    <!-- STATS -->
+    <div class="container stats">
 
-                <div class="col-12 col-md-5">
-                    <label class="form-label">Search</label>
-                    <input id="searchInput" class="form-control" placeholder="Client or receipt">
-                </div>
+        <div class="row g-4">
 
-                <div class="col-12 col-md-3">
-                    <label class="form-label">Rows</label>
-                    <select id="pageSize" class="form-select">
-                        <option>5</option>
-                        <option selected>10</option>
-                        <option>20</option>
-                    </select>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- KPI -->
-        <div class="row g-2 mb-3">
-
-            <div class="col-4">
-                <div class="card p-2 text-center">
-                    <div class="text-muted small">Paid</div>
-                    <div id="kpiPaid" class="kpi text-success">0</div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <h2>100+</h2>
+                    <p class="mb-0">Installations</p>
                 </div>
             </div>
 
-            <div class="col-4">
-                <div class="card p-2 text-center">
-                    <div class="text-muted small">Unpaid</div>
-                    <div id="kpiUnpaid" class="kpi text-danger">0</div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <h2>50+</h2>
+                    <p class="mb-0">Piso Wi-Fi Setups</p>
                 </div>
             </div>
 
-            <div class="col-4">
-                <div class="card p-2 text-center">
-                    <div class="text-muted small">Partial</div>
-                    <div id="kpiPartial" class="kpi text-warning">0</div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <h2>99%</h2>
+                    <p class="mb-0">Client Satisfaction</p>
                 </div>
             </div>
 
-        </div>
-
-        <!-- TABLE -->
-        <div class="card border-0 shadow-sm mb-3">
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-
-                    <thead class="table-dark">
-                        <tr>
-                            <th>Client</th>
-                            <th>Amount</th>
-                            <th>Due</th>
-                            <th>Status</th>
-                            <th>Receipt</th>
-                        </tr>
-                    </thead>
-
-                    <tbody id="tableBody"></tbody>
-
-                </table>
-            </div>
-        </div>
-
-        <!-- PAGINATION -->
-        <div class="d-flex justify-content-between align-items-center mb-3">
-
-            <button id="prevBtn" class="btn btn-outline-secondary btn-sm">Prev</button>
-
-            <div id="pageInfo" class="small text-muted"></div>
-
-            <button id="nextBtn" class="btn btn-outline-primary btn-sm">Next</button>
-
-        </div>
-
-        <!-- UNPAID -->
-        <div class="card border-0 shadow-sm">
-            <div class="card-header text-danger fw-bold">Outstanding Accounts</div>
-            <div class="card-body" id="unpaidList"></div>
         </div>
 
     </div>
 
-    <script src="data.js"></script>
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="container">
+
+            <div class="text-center mb-5 reveal">
+                <h2 class="section-title">
+                    Why Choose Us?
+                </h2>
+
+                <p class="section-subtitle">
+                    We provide dependable network installations and Wi-Fi solutions
+                    designed for performance, stability, and affordability.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-4 reveal">
+                    <div class="feature-card">
+
+                        <div class="icon-box">
+                            <i class="bi bi-wifi"></i>
+                        </div>
+
+                        <h4>Reliable Connectivity</h4>
+
+                        <p>
+                            Stable internet solutions configured for maximum
+                            coverage and performance.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 reveal">
+                    <div class="feature-card">
+
+                        <div class="icon-box">
+                            <i class="bi bi-router"></i>
+                        </div>
+
+                        <h4>Professional Setup</h4>
+
+                        <p>
+                            Organized installation with proper cable management
+                            and optimized network configuration.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 reveal">
+                    <div class="feature-card">
+
+                        <div class="icon-box">
+                            <i class="bi bi-headset"></i>
+                        </div>
+
+                        <h4>Technical Support</h4>
+
+                        <p>
+                            Fast assistance and troubleshooting whenever your
+                            network needs attention.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" style="background:#f1f5f9;">
+
+        <div class="container">
+
+            <div class="text-center mb-5 reveal">
+
+                <h2 class="section-title">
+                    Our Services
+                </h2>
+
+                <p class="section-subtitle">
+                    Complete networking and Piso Wi-Fi solutions tailored
+                    to your needs.
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-6 reveal">
+
+                    <div class="service-card">
+
+                        <div class="icon-box">
+                            <i class="bi bi-globe"></i>
+                        </div>
+
+                        <h4>Internet Installation</h4>
+
+                        <p>
+                            Router configuration, Wi-Fi deployment,
+                            network expansion, cable management,
+                            and internet setup for homes and businesses.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 reveal">
+
+                    <div class="service-card">
+
+                        <div class="icon-box">
+                            <i class="bi bi-cash-coin"></i>
+                        </div>
+
+                        <h4>Piso Wi-Fi Installation</h4>
+
+                        <p>
+                            Complete Piso Wi-Fi system installation,
+                            hotspot configuration, user management,
+                            and bandwidth optimization.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <div class="container text-center reveal">
+
+            <h2 class="fw-bold mb-3">
+                Ready To Upgrade Your Network?
+            </h2>
+
+            <p class="mb-4">
+                Contact Kuya Mark Wi-Fi today and get a reliable
+                internet solution tailored to your needs.
+            </p>
+
+            <a href="#contact" class="btn btn-light btn-lg px-5">
+                Get Started
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="contact-box reveal">
+
+                <div class="text-center">
+
+                    <h2 class="section-title mb-3">
+                        Contact Us
+                    </h2>
+
+                    <p class="text-muted">
+                        Reach out through any of the channels below.
+                    </p>
+
+                </div>
+
+                <div class="row mt-5 text-center">
+
+                    <div class="col-md-4 contact-item">
+
+                        <i class="bi bi-telephone-fill"></i>
+
+                        <h5 class="mt-3">
+                            Phone Number
+                        </h5>
+
+                        <a href="tel:09511816599">
+                            0951 181 6599
+                        </a>
+
+                    </div>
+
+                    <div class="col-md-4 contact-item">
+
+                        <i class="bi bi-envelope-fill"></i>
+
+                        <h5 class="mt-3">
+                            Email Address
+                        </h5>
+
+                        <a href="mailto:00anteja23@gmail.com">
+                            00anteja23@gmail.com
+                        </a>
+
+                    </div>
+
+                    <div class="col-md-4 contact-item">
+
+                        <i class="bi bi-facebook"></i>
+
+                        <h5 class="mt-3">
+                            Facebook
+                        </h5>
+
+                        <a href="https://www.facebook.com/markchito" target="_blank">
+                            facebook.com/markchito
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-5">
+
+        <div class="container text-center">
+
+            <img src="logo.png" alt="Logo" height="70" class="mb-3">
+
+            <h5>Kuya Mark Wi-Fi</h5>
+
+            <p>
+                Internet and Piso Wi-Fi Installation Services
+            </p>
+
+            <p class="mb-0">
+                © 2026 Kuya Mark Wi-Fi. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Floating Facebook -->
+    <a href="https://www.facebook.com/markchito" target="_blank" class="floating-fb">
+        <i class="bi bi-facebook"></i>
+    </a>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        const data = window.paymentData;
+        $(function () {
 
-        let currentMonth = data.activeMonth;
-        let currentPage = 1;
+            // Smooth scroll
+            $('a[href^="#"]').on('click', function (e) {
 
-        // elements
-        const monthSelect = document.getElementById("monthSelect");
-        const tableBody = document.getElementById("tableBody");
-        const unpaidList = document.getElementById("unpaidList");
+                let target = $(this.getAttribute('href'));
 
-        const kpiPaid = document.getElementById("kpiPaid");
-        const kpiUnpaid = document.getElementById("kpiUnpaid");
-        const kpiPartial = document.getElementById("kpiPartial");
+                if (target.length) {
 
-        const pageInfo = document.getElementById("pageInfo");
+                    e.preventDefault();
 
-        // ---------------- init months ----------------
-        Object.keys(data.months).forEach(m => {
-            const opt = document.createElement("option");
-            opt.value = m;
-            opt.textContent = m;
-            monthSelect.appendChild(opt);
-        });
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 80
+                    }, 900);
 
-        monthSelect.value = currentMonth;
-
-        // ---------------- helpers ----------------
-        function formatPeso(v) {
-            return "₱" + Number(v).toLocaleString();
-        }
-
-        // ---------------- core data ----------------
-        function getRecords() {
-            return data.months[currentMonth] || [];
-        }
-
-        function getFiltered() {
-            const q = document.getElementById("searchInput").value.toLowerCase();
-            return getRecords().filter(r =>
-                r.name.toLowerCase().includes(q) ||
-                (r.receiptNumber || "").toLowerCase().includes(q)
-            );
-        }
-
-        // ---------------- render ----------------
-        function render() {
-
-            const pageSize = parseInt(document.getElementById("pageSize").value);
-            const records = getFiltered();
-
-            const totalPages = Math.max(1, Math.ceil(records.length / pageSize));
-
-            if (currentPage > totalPages) currentPage = 1;
-
-            const start = (currentPage - 1) * pageSize;
-            const page = records.slice(start, start + pageSize);
-
-            // KPI
-            let paid = 0, unpaid = 0, partial = 0;
-
-            records.forEach(r => {
-                if (r.status === "Fully Paid") paid++;
-                else if (r.status === "Unpaid") unpaid++;
-                else partial++;
+                }
             });
 
-            kpiPaid.textContent = paid;
-            kpiUnpaid.textContent = unpaid;
-            kpiPartial.textContent = partial;
+            // Navbar shadow
+            $(window).on('scroll', function () {
 
-            // table
-            tableBody.innerHTML = page.map(r => `
-<tr>
-<td>${r.name}</td>
-<td>${formatPeso(r.amount)}</td>
-<td>${r.dueDate}</td>
-<td>${r.status}</td>
-<td>${r.receiptNumber || "-"}</td>
-</tr>
-`).join("");
+                if ($(window).scrollTop() > 50) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
 
-            // unpaid
-            unpaidList.innerHTML = getRecords()
-                .filter(r => r.status === "Unpaid")
-                .map(r => `
-<div class="card unpaid-card mb-2">
-<div class="card-body py-2">
-<div class="fw-semibold">${r.name}</div>
-<div class="small text-muted">Due ${r.dueDate} • ${currentMonth}</div>
-<div class="text-danger fw-bold">${formatPeso(r.amount)}</div>
-</div>
-</div>
-`).join("") || "<div class='text-muted'>No unpaid accounts</div>";
+                // Reveal animation
+                $('.reveal').each(function () {
 
-            // pagination
-            pageInfo.textContent = `Page ${currentPage} / ${totalPages}`;
+                    let top = $(this).offset().top;
+                    let win = $(window).scrollTop();
+                    let height = $(window).height();
 
-            document.getElementById("prevBtn").disabled = currentPage <= 1;
-            document.getElementById("nextBtn").disabled = currentPage >= totalPages;
-        }
+                    if (top < win + height - 100) {
+                        $(this).addClass('active');
+                    }
 
-        // ---------------- events ----------------
-        monthSelect.addEventListener("change", e => {
-            currentMonth = e.target.value;
-            currentPage = 1;
-            render();
+                });
+
+            });
+
+            $(window).trigger('scroll');
+
         });
-
-        document.getElementById("searchInput").addEventListener("input", () => {
-            currentPage = 1;
-            render();
-        });
-
-        document.getElementById("pageSize").addEventListener("change", () => {
-            currentPage = 1;
-            render();
-        });
-
-        document.getElementById("prevBtn").onclick = () => {
-            currentPage--;
-            render();
-        };
-
-        document.getElementById("nextBtn").onclick = () => {
-            currentPage++;
-            render();
-        };
-
-        // INIT
-        render();
     </script>
 
 </body>

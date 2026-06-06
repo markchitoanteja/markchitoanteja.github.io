@@ -1,6 +1,6 @@
 
 window.paymentData = {
-  "activeMonth": "June-2026",
+  "activeMonth": "May-2026",
   "months": {
     "January-2026": [
       {
@@ -862,8 +862,8 @@ window.paymentData = {
         "name": "Maruja Baldago Orale",
         "amount": 1000,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "MAY-2026-024"
       },
       {
         "name": "Mercia Borja",

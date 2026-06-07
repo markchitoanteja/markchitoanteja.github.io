@@ -876,8 +876,8 @@ window.paymentData = {
         "name": "Rosie Samsona",
         "amount": 1000,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "MAY-2026-025"
       },
       {
         "name": "Vilma Lazarra",
@@ -899,15 +899,15 @@ window.paymentData = {
         "name": "Emma Renon",
         "amount": 1000,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-003"
       },
       {
         "name": "Freddie Oros",
         "amount": 1000,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-004"
       },
       {
         "name": "Normita Anteja",
@@ -927,22 +927,22 @@ window.paymentData = {
         "name": "Josephine Macawile Taan",
         "amount": 1500,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-005"
       },
       {
         "name": "Sharon Diu",
         "amount": 1500,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-006"
       },
       {
         "name": "Annabel Macawile Mandariza",
         "amount": 1000,
         "dueDate": "10",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-007"
       },
       {
         "name": "Blessie Comeo",

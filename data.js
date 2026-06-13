@@ -1,6 +1,6 @@
 
 window.paymentData = {
-  "activeMonth": "May-2026",
+  "activeMonth": "June-2026",
   "months": {
     "January-2026": [
       {
@@ -771,8 +771,8 @@ window.paymentData = {
         "name": "Edito Resano",
         "amount": 1000,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "MAY-2026-026"
       },
       {
         "name": "Edmund Guasis",
@@ -855,8 +855,8 @@ window.paymentData = {
         "name": "Marshel Lazarra",
         "amount": 800,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "MAY-2026-027"
       },
       {
         "name": "Maruja Baldago Orale",
@@ -892,8 +892,8 @@ window.paymentData = {
         "name": "Cristina Galicia",
         "amount": 1000,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-008"
       },
       {
         "name": "Emma Renon",
@@ -918,10 +918,10 @@ window.paymentData = {
       },
       {
         "name": "Rina Samantila",
-        "amount": 1000,
+        "amount": 800,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-009"
       },
       {
         "name": "Josephine Macawile Taan",
@@ -969,15 +969,15 @@ window.paymentData = {
         "name": "Ryan Lomuntad",
         "amount": 1000,
         "dueDate": "10",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-010"
       },
       {
         "name": "Edito Resano",
         "amount": 1000,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-011"
       },
       {
         "name": "Edmund Guasis",

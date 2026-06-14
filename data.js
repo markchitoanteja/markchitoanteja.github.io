@@ -1,6 +1,6 @@
 
 window.paymentData = {
-  "activeMonth": "June-2026",
+  "activeMonth": "May-2026",
   "months": {
     "January-2026": [
       {
@@ -881,10 +881,10 @@ window.paymentData = {
       },
       {
         "name": "Vilma Lazarra",
-        "amount": 500,
+        "amount": 1000,
         "dueDate": "30",
-        "status": "Partially Paid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "MAY-2026-028"
       }
     ],
     "June-2026": [

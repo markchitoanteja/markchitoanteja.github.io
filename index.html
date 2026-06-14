@@ -9,7 +9,7 @@
     <title>Kuya Mark Wi-Fi | Internet, Piso Wi-Fi & Technical Services</title>
     <meta name="description" content="Professional Internet, Piso Wi-Fi Installation, Computer Repair, and Technical Services by Kuya Mark - Serving homes, businesses, schools, and communities.">
     <meta name="keywords" content="internet installation, piso wifi, computer repair, printer repair, network setup, technical services">
-    <meta name="author" content="Kuya Mark Wi-Fi">
+    <meta name="author" content="Mark Chito Anteja">
 
     <link rel="icon" href="favicon.ico">
 
@@ -23,7 +23,7 @@
 
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="index-style.css?v=1.2" rel="stylesheet">
+    <link href="index-style.css?v=1.3" rel="stylesheet">
 </head>
 
 <body>
@@ -68,6 +68,12 @@
 
                         <li class="nav-item">
                             <a class="nav-link" href="#contact" onclick="closeMenu()">Contact</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#trust" onclick="closeMenu()">
+                                Trust
+                            </a>
                         </li>
 
                     </ul>
@@ -635,6 +641,124 @@
         </div>
     </section>
 
+    <section id="trust" style="background:#f8fafc;">
+        <div class="container-fluid px-3 px-md-5">
+
+            <div class="text-center mb-5 reveal">
+                <h2 class="section-title">
+                    Licensed & Registered Business
+                </h2>
+
+                <p class="section-subtitle">
+                    Kuya Mark Wi-Fi is a registered local business committed to providing reliable internet and technical services with professionalism and transparency.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-6 reveal">
+
+                    <div class="service-card h-100 text-center">
+
+                        <div class="icon-box mx-auto">
+                            <i class="bi bi-patch-check-fill"></i>
+                        </div>
+
+                        <h4>Registered Business</h4>
+
+                        <p class="mb-4">
+                            We operate as a registered business and comply with local government requirements, giving our customers confidence and peace of mind.
+                        </p>
+
+                        <!-- CERTIFICATES GRID -->
+                        <div class="row g-3 certificate-grid">
+
+                            <div class="col-6">
+                                <div class="certificate-card">
+                                    <div class="certificate-image">
+                                        <img src="images/barangay-certificate.png" alt="Barangay Certificate">
+                                    </div>
+
+                                    <div class="certificate-body">
+                                        <h6>Barangay Certificate</h6>
+
+                                        <button class="btn btn-primary btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#certificateModal" data-image="images/barangay-certificate.png" data-title="Barangay Certificate">
+                                            <i class="bi bi-arrows-fullscreen"></i> View
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="certificate-card">
+                                    <div class="certificate-image">
+                                        <img src="images/dti-certificate.png" alt="DTI Certificate">
+                                    </div>
+
+                                    <div class="certificate-body">
+                                        <h6>DTI Certificate</h6>
+
+                                        <button class="btn btn-primary btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#certificateModal" data-image="images/dti-certificate.png" data-title="DTI Certificate">
+                                            <i class="bi bi-arrows-fullscreen"></i> View
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 reveal">
+
+                    <div class="service-card h-100">
+
+                        <div class="icon-box">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+
+                        <h4>Service Coverage</h4>
+
+                        <p>
+                            We currently provide internet installation, Piso Wi-Fi deployment, computer repair, and technical services within:
+                        </p>
+
+                        <div class="alert alert-primary mt-4">
+
+                            <h5 class="fw-bold mb-2">
+                                📍 Brgy. Dao, Oras, Eastern Samar
+                            </h5>
+
+                            <p class="mb-0">
+                                Serving households, businesses, schools, and community establishments with fast and dependable technical support.
+                            </p>
+
+                        </div>
+
+                        <hr>
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <i class="bi bi-shield-check text-success fs-2"></i>
+
+                            <div>
+                                <strong>Trusted Local Provider</strong><br>
+                                Registered • Reliable • Community-Based
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
     <!-- FOOTER -->
     <footer>
         <div class="container-fluid px-3 px-md-5">
@@ -655,12 +779,41 @@
         <i class="bi bi-chevron-up"></i>
     </div>
 
+    <div class="modal fade" id="certificateModal" tabindex="-1">
+
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="certificateTitle">
+                        Certificate
+                    </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+                <div class="modal-body text-center">
+
+                    <img id="certificateImage" src="" class="img-fluid rounded shadow" alt="Certificate">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="index-script.js?v=1.1"></script>
+    <script src="index-script.js?v=1.2"></script>
 </body>
 
 </html>

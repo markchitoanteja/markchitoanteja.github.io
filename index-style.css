@@ -847,3 +847,75 @@ footer a:hover {
     font-size: 0.95rem;
     padding: 6px 0;
 }
+
+/* ================================
+   CERTIFICATE CARDS (FIXED HEIGHT)
+================================ */
+
+.certificate-grid {
+    margin-top: 10px;
+}
+
+.certificate-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transition: 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* FIX: Equal image height */
+.certificate-image {
+    width: 100%;
+    height: 160px;
+    /* <- controls uniform height */
+    overflow: hidden;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.certificate-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* <- key for uniform cropping */
+    transition: transform 0.4s ease;
+}
+
+.certificate-card:hover .certificate-image img {
+    transform: scale(1.05);
+}
+
+.certificate-body {
+    padding: 12px 12px 14px;
+    text-align: center;
+}
+
+.certificate-body h6 {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: #081120;
+}
+
+.certificate-body .btn {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+}
+
+/* MOBILE TWEAK */
+@media (max-width: 576px) {
+    .certificate-image {
+        height: 140px;
+    }
+}

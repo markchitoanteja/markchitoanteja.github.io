@@ -110,3 +110,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+// Certificate Viewer
+
+const certificateModal = document.getElementById('certificateModal');
+
+if (certificateModal) {
+
+    certificateModal.addEventListener('show.bs.modal', function (event) {
+
+        const button = event.relatedTarget;
+
+        const image = button.getAttribute('data-image');
+        const title = button.getAttribute('data-title');
+
+        document.getElementById('certificateImage').src = image;
+        document.getElementById('certificateTitle').textContent = title;
+
+    });
+
+}

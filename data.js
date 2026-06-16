@@ -1,6 +1,6 @@
 
 window.paymentData = {
-  "activeMonth": "May-2026",
+  "activeMonth": "June-2026",
   "months": {
     "January-2026": [
       {
@@ -913,8 +913,8 @@ window.paymentData = {
         "name": "Normita Anteja",
         "amount": 1000,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-012"
       },
       {
         "name": "Rina Samantila",
@@ -983,8 +983,8 @@ window.paymentData = {
         "name": "Edmund Guasis",
         "amount": 1000,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-013"
       },
       {
         "name": "Gemalyn Nebril",

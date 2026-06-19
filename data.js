@@ -1,6 +1,6 @@
 
 window.paymentData = {
-  "activeMonth": "June-2026",
+  "activeMonth": "May-2026",
   "months": {
     "January-2026": [
       {
@@ -841,8 +841,8 @@ window.paymentData = {
         "name": "Divina Libanan",
         "amount": 1000,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "MAY-2026-029"
       },
       {
         "name": "Farven Alota",
@@ -990,8 +990,8 @@ window.paymentData = {
         "name": "Gemalyn Nebril",
         "amount": 1000,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-014"
       },
       {
         "name": "Bonafacia Cesista",

@@ -1,6 +1,6 @@
 
 window.paymentData = {
-  "activeMonth": "May-2026",
+  "activeMonth": "June-2026",
   "months": {
     "January-2026": [
       {
@@ -962,8 +962,8 @@ window.paymentData = {
         "name": "Rona Lazarra",
         "amount": 1000,
         "dueDate": "10",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-015"
       },
       {
         "name": "Ryan Lomuntad",
@@ -997,22 +997,29 @@ window.paymentData = {
         "name": "Bonafacia Cesista",
         "amount": 1000,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-017"
       },
       {
         "name": "Christian Paul Duran Montallana",
         "amount": 1000,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-016"
       },
       {
         "name": "Edna Norombaba",
         "amount": 600,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-019"
+      },
+      {
+        "name": "Jayson Macawile",
+        "amount": 1000,
+        "dueDate": "20",
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-020"
       },
       {
         "name": "Jovelyn Cañete",
@@ -1025,8 +1032,8 @@ window.paymentData = {
         "name": "Jovelyn Cañete 2",
         "amount": 1000,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-018"
       },
       {
         "name": "Jonathan Madeja",

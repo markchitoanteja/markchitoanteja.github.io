@@ -1127,8 +1127,7 @@ window.paymentData = {
         "receiptNumber": "JUN-2026-027"
       }
     ],
-    "July-2026": [],
-    "August-2026": [
+    "July-2026": [
       {
         "name": "Cristina Galicia",
         "amount": 800,
@@ -1368,6 +1367,7 @@ window.paymentData = {
         "receiptNumber": null
       }
     ],
+    "August-2026": [],
     "September-2026": [],
     "October-2026": [],
     "November-2026": [],

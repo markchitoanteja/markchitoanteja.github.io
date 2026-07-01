@@ -1,6 +1,6 @@
 
 window.paymentData = {
-  "activeMonth": "July-2026",
+  "activeMonth": "June-2026",
   "months": {
     "January-2026": [
       {
@@ -1060,8 +1060,8 @@ window.paymentData = {
         "name": "Farven Alota",
         "amount": 1000,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-028"
       },
       {
         "name": "Marco Madeja",

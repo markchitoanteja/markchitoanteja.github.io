@@ -1139,8 +1139,8 @@ window.paymentData = {
         "name": "Emma Renon",
         "amount": 800,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-008"
       },
       {
         "name": "Freddie Oros",
@@ -1239,6 +1239,13 @@ window.paymentData = {
         "dueDate": "15",
         "status": "Unpaid",
         "receiptNumber": null
+      },
+      {
+        "name": "Merlin Oros",
+        "amount": 500,
+        "dueDate": "15",
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-009"
       },
       {
         "name": "Bonafacia Cesista",
@@ -1368,7 +1375,7 @@ window.paymentData = {
       },
       {
         "name": "Zoe Bayo",
-        "amount": 800,
+        "amount": 500,
         "dueDate": "30",
         "status": "Unpaid",
         "receiptNumber": null

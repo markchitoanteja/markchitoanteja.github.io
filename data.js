@@ -1167,8 +1167,8 @@ window.paymentData = {
         "name": "Rina Samantila",
         "amount": 800,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-010"
       },
       {
         "name": "Josephine Macawile Taan",
@@ -1209,15 +1209,15 @@ window.paymentData = {
         "name": "Rona Lazarra",
         "amount": 800,
         "dueDate": "10",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-013"
       },
       {
         "name": "Ryan Lomuntad",
         "amount": 800,
         "dueDate": "10",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-011"
       },
       {
         "name": "Edito Resano",
@@ -1279,8 +1279,8 @@ window.paymentData = {
         "name": "Jovelyn Cañete",
         "amount": 800,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-012"
       },
       {
         "name": "Jovelyn Cañete 2",

@@ -1244,8 +1244,8 @@ window.paymentData = {
         "name": "Bonafacia Cesista",
         "amount": 800,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-018"
       },
       {
         "name": "Candy Nebrida",

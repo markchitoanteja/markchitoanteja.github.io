@@ -948,8 +948,8 @@ window.paymentData = {
         "name": "Blessie Comeo",
         "amount": 1000,
         "dueDate": "10",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-033"
       },
       {
         "name": "Jarissa Madeja",
@@ -1074,8 +1074,8 @@ window.paymentData = {
         "name": "Marshel Lazarra",
         "amount": 800,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUN-2026-034"
       },
       {
         "name": "Maruja Baldago Orale",
@@ -1195,8 +1195,8 @@ window.paymentData = {
         "name": "Blessie Comeo",
         "amount": 800,
         "dueDate": "10",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-019"
       },
       {
         "name": "Rona Lazarra",
@@ -1223,8 +1223,8 @@ window.paymentData = {
         "name": "Edmund Guasis",
         "amount": 800,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-021"
       },
       {
         "name": "Gemalyn Nebril",
@@ -1286,8 +1286,8 @@ window.paymentData = {
         "name": "Jovelyn Cañete 2",
         "amount": 800,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-022"
       },
       {
         "name": "Jonathan Madeja",
@@ -1300,8 +1300,8 @@ window.paymentData = {
         "name": "Marie Vic Gupa",
         "amount": 800,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-020"
       },
       {
         "name": "Divina Libanan",

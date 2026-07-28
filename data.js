@@ -1293,8 +1293,8 @@ window.paymentData = {
         "name": "Jonathan Madeja",
         "amount": 800,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-023"
       },
       {
         "name": "Marie Vic Gupa",
@@ -1347,9 +1347,9 @@ window.paymentData = {
       },
       {
         "name": "Okyo Lazarra",
-        "amount": 800,
+        "amount": 400,
         "dueDate": "30",
-        "status": "Unpaid",
+        "status": "Partially Paid",
         "receiptNumber": null
       },
       {

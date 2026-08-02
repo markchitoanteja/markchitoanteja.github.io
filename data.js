@@ -1321,15 +1321,15 @@ window.paymentData = {
         "name": "Marco Madeja",
         "amount": 800,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-024"
       },
       {
         "name": "Marshel Lazarra",
         "amount": 800,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-025"
       },
       {
         "name": "Maruja Baldago Orale",

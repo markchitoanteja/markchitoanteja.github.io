@@ -1,6 +1,6 @@
 
 window.paymentData = {
-  "activeMonth": "August-2026",
+  "activeMonth": "July-2026",
   "months": {
     "January-2026": [
       {
@@ -1347,10 +1347,10 @@ window.paymentData = {
       },
       {
         "name": "Okyo Lazarra",
-        "amount": 400,
+        "amount": 800,
         "dueDate": "30",
-        "status": "Partially Paid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-028"
       },
       {
         "name": "Rosie Samsona",
@@ -1400,8 +1400,8 @@ window.paymentData = {
         "name": "Freddie Oros",
         "amount": 1200,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-002"
       },
       {
         "name": "Marvin Bejar",

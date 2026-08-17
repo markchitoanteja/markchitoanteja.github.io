@@ -1370,8 +1370,8 @@ window.paymentData = {
         "name": "Vilma Lazarra",
         "amount": 800,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-032"
       },
       {
         "name": "Zoe Bayo",
@@ -1442,29 +1442,29 @@ window.paymentData = {
         "name": "Ryan Lomuntad",
         "amount": 800,
         "dueDate": "10",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-007"
       },
       {
         "name": "Annabel Macawile Mandariza",
         "amount": 800,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-008"
       },
       {
         "name": "Blessie Comeo",
         "amount": 800,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-009"
       },
       {
         "name": "Rona Lazarra",
         "amount": 800,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-010"
       },
       {
         "name": "Edmund Guasis",

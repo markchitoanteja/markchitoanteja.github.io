@@ -1314,8 +1314,8 @@ window.paymentData = {
         "name": "Farven Alota",
         "amount": 800,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-033"
       },
       {
         "name": "Marco Madeja",
@@ -1477,8 +1477,8 @@ window.paymentData = {
         "name": "Merlin Oros",
         "amount": 500,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-011"
       },
       {
         "name": "Edito Resano",

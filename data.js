@@ -1495,16 +1495,16 @@ window.paymentData = {
         "receiptNumber": null
       },
       {
-        "name": "Candy Nebrida",
-        "amount": 500,
-        "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
-      },
-      {
         "name": "Jayson Macawile",
         "amount": 800,
         "dueDate": "20",
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-012"
+      },
+      {
+        "name": "Candy Nebrida",
+        "amount": 500,
+        "dueDate": "25",
         "status": "Unpaid",
         "receiptNumber": null
       },

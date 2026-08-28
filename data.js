@@ -1,6 +1,6 @@
 
 window.paymentData = {
-  "activeMonth": "August-2026",
+  "activeMonth": "July-2026",
   "months": {
     "January-2026": [
       {
@@ -1265,8 +1265,8 @@ window.paymentData = {
         "name": "Edna Norombaba",
         "amount": 600,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-034"
       },
       {
         "name": "Jayson Macawile",
@@ -1470,8 +1470,8 @@ window.paymentData = {
         "name": "Edmund Guasis",
         "amount": 800,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-017"
       },
       {
         "name": "Merlin Oros",
@@ -1491,8 +1491,8 @@ window.paymentData = {
         "name": "Gemalyn Nebril",
         "amount": 800,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-015"
       },
       {
         "name": "Jayson Macawile",
@@ -1505,43 +1505,43 @@ window.paymentData = {
         "name": "Candy Nebrida",
         "amount": 500,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-016"
       },
       {
         "name": "Bonafacia Cesista",
         "amount": 800,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-014"
       },
       {
         "name": "Christian Paul Duran Montallana",
         "amount": 800,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-013"
       },
       {
         "name": "Edna Norombaba",
-        "amount": 600,
+        "amount": 400,
         "dueDate": "25",
-        "status": "Unpaid",
+        "status": "Partially Paid",
         "receiptNumber": null
       },
       {
         "name": "Jovelyn Cañete",
         "amount": 800,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-018"
       },
       {
         "name": "Jovelyn Cañete 2",
         "amount": 800,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-019"
       },
       {
         "name": "Jonathan Madeja",

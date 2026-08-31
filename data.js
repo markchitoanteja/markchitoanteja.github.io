@@ -1,6 +1,6 @@
 
 window.paymentData = {
-  "activeMonth": "July-2026",
+  "activeMonth": "August-2026",
   "months": {
     "January-2026": [
       {
@@ -1421,8 +1421,8 @@ window.paymentData = {
         "name": "Rina Samantila",
         "amount": 800,
         "dueDate": "10",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-020"
       },
       {
         "name": "Josephine Macawile Taan",
@@ -1481,11 +1481,11 @@ window.paymentData = {
         "receiptNumber": "AUG-2026-011"
       },
       {
-        "name": "Edito Resano",
+        "name": "Tammy",
         "amount": 800,
-        "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "dueDate": "15",
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-021"
       },
       {
         "name": "Gemalyn Nebril",
@@ -1672,13 +1672,6 @@ window.paymentData = {
         "receiptNumber": null
       },
       {
-        "name": "Rina Samantila",
-        "amount": 800,
-        "dueDate": "10",
-        "status": "Unpaid",
-        "receiptNumber": null
-      },
-      {
         "name": "Josephine Macawile Taan",
         "amount": 1200,
         "dueDate": "10",
@@ -1735,9 +1728,9 @@ window.paymentData = {
         "receiptNumber": null
       },
       {
-        "name": "Edito Resano",
+        "name": "Tammy",
         "amount": 800,
-        "dueDate": "20",
+        "dueDate": "15",
         "status": "Unpaid",
         "receiptNumber": null
       },
@@ -1761,6 +1754,13 @@ window.paymentData = {
         "dueDate": "20",
         "status": "Unpaid",
         "receiptNumber": null
+      },
+      {
+        "name": "Rina Samantila",
+        "amount": 800,
+        "dueDate": "20",
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-001"
       },
       {
         "name": "Bonafacia Cesista",

@@ -1,6 +1,6 @@
 
 window.paymentData = {
-  "activeMonth": "August-2026",
+  "activeMonth": "July-2026",
   "months": {
     "January-2026": [
       {
@@ -1307,8 +1307,8 @@ window.paymentData = {
         "name": "Divina Libanan",
         "amount": 800,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "JUL-2026-035"
       },
       {
         "name": "Farven Alota",

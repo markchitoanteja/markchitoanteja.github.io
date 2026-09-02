@@ -1554,8 +1554,8 @@ window.paymentData = {
         "name": "Marie Vic Gupa",
         "amount": 800,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-022"
       },
       {
         "name": "Marco Madeja",
@@ -1591,15 +1591,15 @@ window.paymentData = {
         "name": "Marshel Lazarra",
         "amount": 800,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-003"
       },
       {
         "name": "Maruja Baldago Orale",
         "amount": 800,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-004"
       },
       {
         "name": "Mercia Borja",
@@ -1610,17 +1610,17 @@ window.paymentData = {
       },
       {
         "name": "Jeffrey Lazarra",
-        "amount": 800,
+        "amount": 400,
         "dueDate": "5",
-        "status": "Unpaid",
+        "status": "Partially Paid",
         "receiptNumber": null
       },
       {
         "name": "Rosie Samsona",
         "amount": 800,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-002"
       },
       {
         "name": "Marvin Bejar",

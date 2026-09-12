@@ -1605,8 +1605,8 @@ window.paymentData = {
         "name": "Mercia Borja",
         "amount": 800,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-013"
       },
       {
         "name": "Jeffrey Lazarra",
@@ -1654,8 +1654,8 @@ window.paymentData = {
         "name": "Emma Renon",
         "amount": 800,
         "dueDate": "10",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-014"
       },
       {
         "name": "Freddie Oros",

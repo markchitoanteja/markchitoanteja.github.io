@@ -1547,8 +1547,8 @@ window.paymentData = {
         "name": "Jonathan Madeja",
         "amount": 800,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-024"
       },
       {
         "name": "Marie Vic Gupa",
@@ -1575,15 +1575,15 @@ window.paymentData = {
         "name": "Vilma Lazarra",
         "amount": 800,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-025"
       },
       {
         "name": "Zoe Bayo",
         "amount": 500,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "AUG-2026-026"
       }
     ],
     "September-2026": [
@@ -1640,8 +1640,8 @@ window.paymentData = {
         "name": "Farven Alota",
         "amount": 800,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-015"
       },
       {
         "name": "Cristina Galicia",
@@ -1689,8 +1689,8 @@ window.paymentData = {
         "name": "Ryan Lomuntad",
         "amount": 800,
         "dueDate": "10",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-016"
       },
       {
         "name": "Annabel Macawile Mandariza",
@@ -1724,15 +1724,15 @@ window.paymentData = {
         "name": "Merlin Oros",
         "amount": 500,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-017"
       },
       {
         "name": "Tammy",
-        "amount": 800,
+        "amount": 1000,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-018"
       },
       {
         "name": "Gemalyn Nebril",

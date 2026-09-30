@@ -1738,15 +1738,15 @@ window.paymentData = {
         "name": "Gemalyn Nebril",
         "amount": 800,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-022"
       },
       {
         "name": "Jayson Macawile",
         "amount": 800,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-023"
       },
       {
         "name": "Rina Samantila",
@@ -1766,15 +1766,15 @@ window.paymentData = {
         "name": "Candy Nebrida",
         "amount": 500,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-024"
       },
       {
         "name": "Christian Paul Duran Montallana",
         "amount": 800,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-026"
       },
       {
         "name": "Edna Norombaba",
@@ -1787,15 +1787,15 @@ window.paymentData = {
         "name": "Jovelyn Cañete",
         "amount": 800,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-025"
       },
       {
         "name": "Jovelyn Cañete 2",
         "amount": 800,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-027"
       },
       {
         "name": "Jonathan Madeja",
@@ -1808,8 +1808,8 @@ window.paymentData = {
         "name": "Marie Vic Gupa",
         "amount": 800,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "SEP-2026-028"
       },
       {
         "name": "Marco Madeja",

@@ -1849,17 +1849,17 @@
     "October-2026": [
       {
         "name": "Marshel Lazarra",
-        "amount": 800,
+        "amount": 600,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-015"
       },
       {
         "name": "Maruja Baldago Orale",
         "amount": 800,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-014"
       },
       {
         "name": "Mercia Borja",
@@ -1893,8 +1893,8 @@
         "name": "Farven Alota",
         "amount": 800,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-013"
       },
       {
         "name": "Cristina Galicia",
@@ -1942,8 +1942,8 @@
         "name": "Ryan Lomuntad",
         "amount": 800,
         "dueDate": "10",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-017"
       },
       {
         "name": "Annabel Macawile Mandariza",
@@ -1956,8 +1956,8 @@
         "name": "Blessie Comeo",
         "amount": 800,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-018"
       },
       {
         "name": "Rona Lazarra",
@@ -1970,22 +1970,22 @@
         "name": "Edmund Guasis",
         "amount": 800,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-019"
       },
       {
         "name": "Merlin Oros",
         "amount": 500,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-016"
       },
       {
         "name": "Tammy",
         "amount": 1000,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-020"
       },
       {
         "name": "Gemalyn Nebril",

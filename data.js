@@ -1992,19 +1992,19 @@ window.paymentData = {
         "name": "Gemalyn Nebril",
         "amount": 800,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-021"
       },
       {
         "name": "Jayson Macawile",
         "amount": 800,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-022"
       },
       {
         "name": "John Paul Madeja",
-        "amount": 800,
+        "amount": 1000,
         "dueDate": "20",
         "status": "Unpaid",
         "receiptNumber": null
@@ -2020,8 +2020,8 @@ window.paymentData = {
         "name": "Bonafacia Cesista",
         "amount": 800,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-023"
       },
       {
         "name": "Candy Nebrida",

@@ -1857,10 +1857,10 @@ window.paymentData = {
       },
       {
         "name": "Jeffrey Lazarra",
-        "amount": 400,
+        "amount": 800,
         "dueDate": "5",
-        "status": "Partially Paid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-032"
       },
       {
         "name": "Lyka Nicart",
@@ -2041,8 +2041,8 @@ window.paymentData = {
         "name": "Candy Nebrida",
         "amount": 500,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-027"
       },
       {
         "name": "Christian Paul Duran Montallana",
@@ -2062,22 +2062,22 @@ window.paymentData = {
         "name": "Jovelyn Cañete",
         "amount": 800,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-029"
       },
       {
         "name": "Jovelyn Cañete 2",
         "amount": 800,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-030"
       },
       {
         "name": "Jovelyn Cañete 3",
         "amount": 800,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-031"
       },
       {
         "name": "Jonathan Madeja",
@@ -2090,8 +2090,8 @@ window.paymentData = {
         "name": "Marie Vic Gupa",
         "amount": 800,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-028"
       },
       {
         "name": "Marco Madeja",
@@ -2132,9 +2132,9 @@ window.paymentData = {
       },
       {
         "name": "Jeffrey Lazarra",
-        "amount": 400,
+        "amount": 600,
         "dueDate": "5",
-        "status": "Unpaid",
+        "status": "Partially Paid",
         "receiptNumber": null
       },
       {
@@ -2392,6 +2392,13 @@ window.paymentData = {
       {
         "name": "Zoe Bayo",
         "amount": 500,
+        "dueDate": "30",
+        "status": "Unpaid",
+        "receiptNumber": null
+      },
+      {
+        "name": "Divina Libanan",
+        "amount": 800,
         "dueDate": "30",
         "status": "Unpaid",
         "receiptNumber": null

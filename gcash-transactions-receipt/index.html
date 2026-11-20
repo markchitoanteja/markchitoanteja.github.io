@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GCash Transaction Record - A4</title>
+<style>
+  * { box-sizing: border-box; }
+  @page { size: A4 portrait; margin: 0; }
+  html, body { margin: 0; padding: 0; background: #e9edf3; font-family: Arial, Helvetica, sans-serif; color: #111; }
+  .sheet {
+    width: 210mm;
+    height: 297mm;
+    margin: 12px auto;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 105mm 105mm;
+    grid-template-rows: 148.5mm 148.5mm;
+    box-shadow: 0 2px 14px rgba(0,0,0,.12);
+  }
+  .form {
+    width: 105mm;
+    height: 148.5mm;
+    padding: 7mm 6mm 5mm;
+    border: .25mm dashed #999;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .heading { text-align: center; margin: 0 0 1mm; font-size: 11pt; font-weight: 700; letter-spacing: .25px; }
+  .subheading { text-align: center; font-size: 6.5pt; letter-spacing: 1px; color: #444; margin-bottom: 4mm; }
+  .date { text-align: right; font-size: 8pt; line-height: 1.45; margin-bottom: 3mm; }
+  .date strong { display: block; font-size: 8.5pt; }
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: .25mm solid #222; padding: 1.4mm .7mm; text-align: center; vertical-align: middle; overflow-wrap: anywhere; }
+  th { font-size: 6.4pt; line-height: 1.15; font-weight: 700; height: 11mm; }
+  td { height: 10mm; font-size: 7pt; }
+  .time { width: 14%; }
+  .amount { width: 19%; }
+  .type { width: 23%; }
+  .client { width: 26%; }
+  .charge { width: 18%; }
+  .total { margin-top: auto; text-align: right; font-size: 8pt; font-weight: 700; padding-top: 4mm; }
+  .footer { text-align: center; font-size: 6pt; color: #555; border-top: .2mm solid #bbb; padding-top: 2mm; margin-top: 3mm; }
+  .toolbar { width: 210mm; margin: 14px auto 8px; display: flex; justify-content: center; gap: 10px; }
+  button { border: 0; background: #155eef; color: white; padding: 10px 18px; border-radius: 6px; font-size: 14px; cursor: pointer; }
+  .hint { text-align: center; color: #333; font-size: 12px; margin: 0 auto 12px; }
+  @media print {
+    html, body { width: 210mm; height: 297mm; background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    .toolbar, .hint { display: none !important; }
+    .form { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">Print A4 Sheet</button></div>
+<p class="hint">Print on A4 paper at 100% / Actual Size. Each form is A6 (one-quarter of the page).</p>
+<main class="sheet" id="sheet"></main>
+<script>
+  const now = new Date();
+  const day = new Intl.DateTimeFormat('en-PH', { weekday: 'long' }).format(now);
+  const date = new Intl.DateTimeFormat('en-PH', { year: 'numeric', month: 'long', day: 'numeric' }).format(now);
+  const sheet = document.getElementById('sheet');
+
+  for (let i = 0; i < 4; i++) {
+    const form = document.createElement('section');
+    form.className = 'form';
+    form.innerHTML = `
+      <h1 class="heading">GCASH TRANSACTION RECORD</h1>
+      <div class="subheading">DAILY TRANSACTION LOG</div>
+      <div class="date"><span>${day}</span><strong>${date}</strong></div>
+      <table aria-label="GCash transaction entries">
+        <colgroup>
+          <col class="time"><col class="amount"><col class="type"><col class="client"><col class="charge">
+        </colgroup>
+        <thead><tr>
+          <th>Time</th>
+          <th>Amount</th>
+          <th>Transaction<br>Type</th>
+          <th>Client Name</th>
+          <th>Charge</th>
+        </tr></thead>
+        <tbody>${Array.from({length: 8}, () => '<tr><td></td><td></td><td></td><td></td><td></td></tr>').join('')}</tbody>
+      </table>
+      <div class="total">Total Charge: ₱ __________________</div>
+      <div class="footer">GCash Transaction Monitoring Record</div>
+    `;
+    sheet.appendChild(form);
+  }
+</script>
+</body>
+</html>

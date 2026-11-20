@@ -1992,7 +1992,7 @@ window.paymentData = {
         "name": "Merlin Oros 2",
         "amount": 800,
         "dueDate": "15",
-        "status": "Unpaid",
+        "status": "Fully Paid",
         "receiptNumber": "OCT-2026-011"
       },
       {
@@ -2083,8 +2083,8 @@ window.paymentData = {
         "name": "Jonathan Madeja",
         "amount": 800,
         "dueDate": "30",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "OCT-2026-038"
       },
       {
         "name": "Marie Vic Gupa",
@@ -2132,10 +2132,10 @@ window.paymentData = {
       },
       {
         "name": "Jeffrey Lazarra",
-        "amount": 400,
+        "amount": 800,
         "dueDate": "5",
-        "status": "Partially Paid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "NOV-2026-014"
       },
       {
         "name": "Lyka Nicart",
@@ -2169,8 +2169,8 @@ window.paymentData = {
         "name": "Mercia Borja",
         "amount": 800,
         "dueDate": "5",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "NOV-2026-015"
       },
       {
         "name": "Rosie Samsona",
@@ -2197,8 +2197,8 @@ window.paymentData = {
         "name": "Freddie Oros",
         "amount": 800,
         "dueDate": "10",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "NOV-2026-016"
       },
       {
         "name": "Normita Anteja",
@@ -2225,8 +2225,8 @@ window.paymentData = {
         "name": "Ryan Lomuntad",
         "amount": 800,
         "dueDate": "10",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "NOV-2026-017"
       },
       {
         "name": "Annabel Macawile Mandariza",
@@ -2260,15 +2260,15 @@ window.paymentData = {
         "name": "Merlin Oros",
         "amount": 500,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "NOV-2026-018"
       },
       {
         "name": "Merlin Oros 2",
         "amount": 800,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "NOV-2026-019"
       },
       {
         "name": "Tammy",

@@ -2288,8 +2288,8 @@ window.paymentData = {
         "name": "Jayson Macawile",
         "amount": 800,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "NOV-2026-020"
       },
       {
         "name": "John Paul Madeja",
@@ -2309,8 +2309,8 @@ window.paymentData = {
         "name": "Bonafacia Cesista",
         "amount": 800,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "NOV-2026-021"
       },
       {
         "name": "Candy Nebrida",

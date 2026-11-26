@@ -2253,8 +2253,8 @@ window.paymentData = {
         "name": "Edmund Guasis",
         "amount": 800,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "NOV-2026-023"
       },
       {
         "name": "Merlin Oros",
@@ -2274,15 +2274,15 @@ window.paymentData = {
         "name": "Tammy",
         "amount": 1000,
         "dueDate": "15",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "NOV-2026-022"
       },
       {
         "name": "Gemalyn Nebril",
         "amount": 800,
         "dueDate": "20",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "NOV-2026-024"
       },
       {
         "name": "Jayson Macawile",
@@ -2316,8 +2316,8 @@ window.paymentData = {
         "name": "Candy Nebrida",
         "amount": 500,
         "dueDate": "25",
-        "status": "Unpaid",
-        "receiptNumber": null
+        "status": "Fully Paid",
+        "receiptNumber": "NOV-2026-025"
       },
       {
         "name": "Christian Paul Duran Montallana",
